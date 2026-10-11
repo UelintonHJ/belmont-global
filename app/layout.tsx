@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Header } from "./components/Header";
 import "./globals.css";
 
 const canela = localFont({
@@ -41,7 +42,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="pt-BR"
       className={`${canela.variable} ${titilliumWeb.variable} ${rtRondelle.variable} ${wulkanDisplay.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Header />
+
+        <div className="flex min-h-0 flex-1 flex-col pt-34 max-[480px]:pt-25">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

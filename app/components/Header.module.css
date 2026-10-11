@@ -1,0 +1,359 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+
+  width: 100%;
+  height: 136px;
+  box-sizing: border-box;
+
+  background-color: var(--color-night-alt);
+
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    transform 350ms ease,
+    visibility 0s linear 0s;
+}
+
+.header[data-visible="false"] {
+  transform: translateY(-100%);
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    transform 350ms ease,
+    visibility 0s linear 350ms;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-inline: 48px;
+}
+
+.logo {
+  display: inline-flex;
+  flex: 0 1 292px;
+  align-items: center;
+
+  width: 292px;
+  max-width: 32%;
+  min-width: 0;
+
+  text-decoration: none;
+}
+
+.logoImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(20px, 2.4vw, 36px);
+
+  min-width: 0;
+}
+
+.navLink,
+.loginLink {
+  display: inline-flex;
+  align-items: center;
+
+  font-family: var(--font-rt-rondelle), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  text-decoration: none;
+  text-underline-offset: 1px;
+
+  transition:
+    color 180ms ease,
+    text-decoration-color 180ms ease;
+}
+
+.navLink {
+  color: rgb(255 255 255 / 40%);
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+}
+
+.navLink:hover,
+.loginLink:hover {
+  color: #fff;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+}
+
+.loginLink {
+  position: relative;
+  display: inline-flex;
+  gap: 10px;
+
+  padding-left: 28px;
+
+  color: #fff;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+}
+
+.loginLink::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 1px;
+  height: 36px;
+
+  background-color: rgb(255 255 255 / 40%);
+  transform: translateY(-50%);
+}
+
+.loginArrow {
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.loginLink:hover .loginArrow {
+  transform: translateX(3px);
+}
+
+.logo:focus-visible,
+.navLink:focus-visible,
+.loginLink:focus-visible,
+.menuToggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 2px;
+
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menuToggle span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+}
+
+.staggerLogo,
+.staggerAbout,
+.staggerCareer,
+.staggerContact,
+.staggerDigital,
+.staggerLogin {
+  animation-name: headerDropIn;
+  animation-duration: 550ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.staggerLogo {
+  animation-delay: 200ms;
+}
+
+.staggerAbout {
+  animation-delay: 350ms;
+}
+
+.staggerCareer {
+  animation-delay: 450ms;
+}
+
+.staggerContact {
+  animation-delay: 550ms;
+}
+
+.staggerDigital {
+  animation-delay: 650ms;
+}
+
+.staggerLogin {
+  animation-delay: 850ms;
+}
+
+@keyframes headerDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .inner {
+    padding-inline: 32px;
+  }
+
+  .logo {
+    flex-basis: 250px;
+    width: 250px;
+  }
+
+  .navigation {
+    gap: 20px;
+  }
+
+  .navLink,
+  .loginLink {
+    font-size: 15px;
+  }
+
+  .loginLink {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding-inline: 24px;
+  }
+
+  .logo {
+    flex-basis: 230px;
+    width: 230px;
+    max-width: calc(100% - 64px);
+  }
+
+  .menuToggle {
+    display: inline-flex;
+    flex: 0 0 44px;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+
+    padding: 12px 24px 24px;
+    border-top: 1px solid rgb(255 255 255 / 15%);
+
+    background-color: var(--color-night-alt);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 0s linear 180ms;
+  }
+
+  .header[data-menu-open="true"] .navigation {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 0s linear 0s;
+  }
+
+  .navLink,
+  .loginLink {
+    justify-content: space-between;
+    padding: 15px 0;
+
+    font-size: 16px;
+  }
+
+  .loginLink {
+    margin-top: 8px;
+    padding-top: 20px;
+    padding-left: 0;
+
+    border-top: 1px solid rgb(255 255 255 / 50%);
+    border-left: 0;
+  }
+
+  .loginLink::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 100px;
+  }
+
+  .inner {
+    padding-inline: 20px;
+  }
+
+  .logo {
+    flex-basis: 210px;
+    width: 210px;
+  }
+
+  .navigation {
+    padding-inline: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .navLink,
+  .loginLink,
+  .loginArrow,
+  .navigation {
+    transition: none;
+  }
+
+  .staggerLogo,
+  .staggerAbout,
+  .staggerCareer,
+  .staggerContact,
+  .staggerDigital,
+  .staggerLogin {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
