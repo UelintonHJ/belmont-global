@@ -73,7 +73,7 @@
   align-items: center;
 
   font-family: var(--font-rt-rondelle), sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.4;
 
@@ -301,7 +301,7 @@
     justify-content: space-between;
     padding: 15px 0;
 
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .loginLink {
