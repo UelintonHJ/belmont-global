@@ -1,0 +1,16 @@
+.countUp {
+    display: inline-grid;
+    grid-template-columns: max-content;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.value,
+.placeholder {
+    grid-area: 1 / 1;
+}
+
+.placeholder {
+    visibility: hidden;
+    pointer-events: none;
+}

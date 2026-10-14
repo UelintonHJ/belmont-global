@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import "./globals.css";
 
 const canela = localFont({
-  src: "./fonts/canela/canela-Regular.woff2",
+  src: "./fonts/canela/Canela-Regular.woff2",
   variable: "--font-canela",
   weight: "400",
   display: "swap",

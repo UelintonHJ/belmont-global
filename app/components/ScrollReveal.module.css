@@ -1,0 +1,93 @@
+.reveal {
+    opacity: 0;
+}
+
+.up {
+    transform: translateY(1.5rem);
+}
+
+.left {
+    transform: translateX(-2rem);
+}
+
+.center {
+    transform: scale(0.8);
+    transform-origin: center center;
+}
+
+.right {
+    transform: translateX(2rem);
+}
+
+.isVisible.up {
+    animation: revealUp 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.isVisible.left {
+    animation: revealLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.isVisible.center {
+    animation: revealCenter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.isVisible.right {
+    animation: revealRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes revealCenter {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes revealRight {
+    from {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}

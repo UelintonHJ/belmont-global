@@ -7,7 +7,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import styles from "./Header.module.css";
 
 const navigationLinks = [
-    { label: "Sobre nós", href: "#sobre-nos", animation: styles.staggerAbout },
+    { label: "Quem Somos", href: "#sobre-nos", animation: styles.staggerAbout },
     { label: "Carreira", href: "#carreira", animation: styles.staggerCareer },
     { label: "Contato", href: "#contato", animation: styles.staggerContact },
     { label: "BG Digital", href: "#bg-digital", animation: styles.staggerDigital },
