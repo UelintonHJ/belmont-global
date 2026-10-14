@@ -65,7 +65,7 @@ export function AboutUs() {
                             className={styles.detailsLink}
                             href="#sobre-nos"
                         >
-                            <span>Mais detalhes</span>
+                            <span>Mais Detalhes</span>
 
                             <svg
                                 className={styles.detailsArrow}

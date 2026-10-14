@@ -25,8 +25,8 @@ export function ScrollReveal({
 
         if (!element) return;
 
-        if (!("IntersectionObserver" in window)) {
-            setIsVisible(true);
+        if (typeof IntersectionObserver === "undefined") {
+            element.classList.add(styles.isVisible);
             return;
         }
 
