@@ -36,6 +36,10 @@
     text-wrap: balance;
 }
 
+.title > span {
+    display: block;
+}
+
 .description {
     display: grid;
     gap: 1.25rem;
@@ -126,7 +130,7 @@
         margin-top: 1.5rem;
     }
 
-    .detailsLink {
+    .detailsReveal {
         margin-top: 1.5rem;
     }
 

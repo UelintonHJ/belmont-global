@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "./InvestmentApproach.module.css";
+import { ScrollReveal } from "./ScrollReveal";
 
 export function InvestmentApproach() {
     return (
@@ -15,55 +16,67 @@ export function InvestmentApproach() {
                         id="investment-approach-title"
                         className={styles.title}
                     >
-                        Abordagem de Investimento
+                        <ScrollReveal as="span">
+                            Abordagem de Investimento
+                        </ScrollReveal>
                     </h2>
 
                     <div className={styles.description}>
-                        <p>
+                        <ScrollReveal as="p">
                             Nossa abordagem de investimento combina
                             estratégias direcionais, de valor relativo
-                            e de trading de derivativos, concebidas para 
-                            gerar retornos ortogononais e complementares  
+                            e de trading de derivativos, concebidas para
+                            gerar retornos ortogononais e complementares
                             em uma ampla gama de soluções de investimento.
-                        </p>
+                        </ScrollReveal>
 
-                        <p>
+                        <ScrollReveal as="p">
                             Diferenciamos nosso processo de investimento
                             por meio de nossos três pilares fundamentais
                             de especialização: visão macroeconômica,
                             estruturação de operações e gestão de risco.
-                        </p>
+                        </ScrollReveal>
                     </div>
 
-                    <a 
-                        className={styles.detailsLink}
-                        href="#investment-approach"
+                    <ScrollReveal
+                        as="div"
+                        variant="center"
+                        className={styles.detailsReveal}
                     >
-                        <span>Mais Detalhes</span>
-
-                        <svg
-                            className={styles.detailsArrow}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            aria-hidden="true"
-                            focusable="false"
+                        <a
+                            className={styles.detailsLink}
+                            href="#investment-approach"
                         >
-                            <path 
-                                d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
-                                stroke="currentColor"
-                                strokeWidth="1.25"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                    </a>
+                            <span>Mais Detalhes</span>
+
+                            <svg
+                                className={styles.detailsArrow}
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path
+                                    d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
+                                    stroke="currentColor"
+                                    strokeWidth="1.25"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </a>
+                    </ScrollReveal>
                 </div>
 
-                <div className={styles.media}>
-                    <Image 
+                <ScrollReveal
+                    as="div"
+                    variant="wipe"
+                    className={styles.media}
+                >
+                    <Image
                         src="/images/investmet-approach-img.webp"
                         alt=""
                         width={848}
@@ -71,7 +84,7 @@ export function InvestmentApproach() {
                         sizes="(max-width: 960px) calc(100vw - 40), (max-width: 1280px) 40vw, 512px"
                         className={styles.image}
                     />
-                </div>
+                </ScrollReveal>
             </div>
         </section>
     );

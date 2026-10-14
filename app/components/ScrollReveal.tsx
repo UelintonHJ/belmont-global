@@ -7,7 +7,7 @@ import styles from "./ScrollReveal.module.css";
 type ScrollRevealProps = {
     as: "div" | "span" | "p";
     className?: string;
-    variant?: "up" | "center" | "left" | "right";
+    variant?: "up" | "center" | "left" | "right" | "wipe";
     children: React.ReactNode;
 };
 
