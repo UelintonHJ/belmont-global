@@ -30,11 +30,56 @@ export function ScrollReveal({
             return;
         }
 
+        let hasStartedReveal = false;
+
+        async function reveal(target: Element) {
+            if (variant === "wipe") {
+                const image = target.querySelector("img");
+
+                if (image) {
+                    image.loading = "eager";
+
+                    if (typeof image.decode === "function") {
+                        try {
+                            await image.decode();
+                        } catch {
+
+                        }
+                    } else if (!image.complete) {
+                        await new Promise<void>((resolve) => {
+                            const onReady = () => {
+                                image.removeEventListener("load", onReady);
+                                image.removeEventListener("error", onReady);
+                                resolve();
+                            };
+
+                            image.addEventListener("load", onReady, {
+                                once: true,
+                            });
+
+                            image.addEventListener("error", onReady, {
+                                once: true,
+                            });
+
+                            if (image.complete) {
+                                onReady();
+                            }
+                        });
+                    }
+                }
+            }
+
+            if (!target.isConnected) return;
+
+            setIsVisible(true);
+            observer.unobserve(target);
+        }
+
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(entry.target);
+                if (entry.isIntersecting && !hasStartedReveal) {
+                    hasStartedReveal = true;
+                    void reveal(entry.target);
                 }
             },
             {
@@ -46,7 +91,7 @@ export function ScrollReveal({
         observer.observe(element);
 
         return () => observer.disconnect();
-    }, []);
+    }, [variant]);
 
     const Tag = as as ElementType;
 

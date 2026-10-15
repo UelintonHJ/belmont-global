@@ -1,12 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 import styles from "./Hero.module.css";
 
 export function Hero() {
+    const [isImageReady, setIsImageReady] = useState(false);
+
+    async function handleImageLoad(
+        event: React.SyntheticEvent<HTMLImageElement>
+    ) {
+        const image = event.currentTarget;
+
+        try {
+            if (typeof image.decode === "function") {
+                await image.decode();
+            }
+        } catch {
+
+        }
+
+        setIsImageReady(true);
+    }
+
     return (
         <section className={styles.hero} aria-labelledby="hero-title">
             <div className={styles.media} aria-hidden="true">
-                <div className={styles.imageFrame}>
+                <div
+                    className={[
+                        styles.imageFrame,
+                        isImageReady ? styles.imageReady : "",
+                    ]
+                        .filter(Boolean)
+                        .join(" ")}
+                >
                     <div className={styles.imageCanvas}>
                         <Image
                             src="/images/hero-img.webp"
@@ -15,6 +43,9 @@ export function Hero() {
                             height={896}
                             sizes="(max-width: 532px) calc(100vw - 40px), 500.7px"
                             className={styles.image}
+                            loading="eager"
+                            fetchPriority="high"
+                            onLoad={handleImageLoad}
                             unoptimized
                         />
                     </div>

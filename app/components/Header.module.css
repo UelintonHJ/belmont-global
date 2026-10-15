@@ -14,7 +14,7 @@
   pointer-events: auto;
 
   transition:
-    transform 350ms ease,
+    transform 220ms ease-out,
     visibility 0s linear 0s;
 }
 
@@ -24,7 +24,7 @@
   pointer-events: none;
 
   transition:
-    transform 350ms ease,
+    transform 350ms ease-in,
     visibility 0s linear 350ms;
 }
 

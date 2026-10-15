@@ -10,6 +10,10 @@
     --image-width-start: min(500.7px, calc(100vw - 40px));
     --image-width-end: min(430px, calc(100vw - 56px));
 
+    --image-side-inset: calc(
+        (var(--image-width-start) - var(--image-width-end)) / 2
+    );
+
     --image-zoom-scale: 1.12;
 
     position: relative;
@@ -51,10 +55,19 @@
     overflow: hidden;
 
     clip-path: inset(100% 0 0 0);
+}
 
-    animation: imageReveal 
+.imageFrame.imageReady {
+    animation: imageReveal
         var(--image-animation-duration)
-        cubic-bezier(0.65, 0, 0.35, 1) 
+        cubic-bezier(0.65, 0, 0.35, 1)
+        both;
+}
+
+.imageFrame.imageReady .image {
+    animation: imageZoom
+        var(--image-animation-duration)
+        cubic-bezier(0.65, 0, 0.35, 1)
         both;
 }
 
@@ -80,11 +93,6 @@
 
     transform: scale(1);
     transform-origin: center center;
-
-    animation: imageZoom
-        var(--image-animation-duration)
-        cubic-bezier(0.65, 0, 0.35, 1)
-        both;
 }
 
 .overlay {
@@ -199,18 +207,15 @@
 
 @keyframes imageReveal {
     0% {
-        width: var(--image-width-start);
         clip-path: inset(100% 0 0 0);
     }
 
     60% {
-        width: var(--image-width-start);
         clip-path: inset(0 0 0 0);
     }
 
     100% {
-        width: var(--image-width-end);
-        clip-path: inset(0 0 0 0);
+        clip-path: inset(0 var(--image-side-inset));
     }
 }
 
