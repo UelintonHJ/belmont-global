@@ -48,6 +48,16 @@
     pointer-events: none;
 }
 
+.scaleDown {
+    transform: scale(1.4);
+    transform-origin: center center;
+}
+
+.grow {
+    transform: scale(0);
+    transform-origin: center center;
+}
+
 .isVisible.up {
     animation: revealUp 2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -72,6 +82,14 @@
 .isVisible.wipe>img {
     animation: revealWipeImage 2.5s cubic-bezier(0.22, 1, 0.36, 1) both;
     transform-origin: right center;
+}
+
+.isVisible.scaleDown {
+    animation: revealScaleDown 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.isVisible.grow {
+    animation: revealGrow 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes revealUp {
@@ -156,6 +174,30 @@
     100% {
         left: 100%;
         width: 0;
+    }
+}
+
+@keyframes revealScaleDown {
+    from {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes revealGrow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 

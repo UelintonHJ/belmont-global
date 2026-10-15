@@ -1,0 +1,268 @@
+.section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: 
+        clamp(9rem, 11vw, 11rem)
+        clamp(1.25rem, 4vw, 3rem)
+        clamp(5rem, 7vw, 7rem);
+
+    background-color: var(--color-night-alt);
+    background-image: 
+        linear-gradient(
+            180deg,
+            rgb(20 28 37 / 58%) 0%,
+            rgb(20 28 37 / 76%) 100%
+        ),
+        url("/images/at-a-glance-img.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: var(--color-white);
+}
+
+.decorativeBlock {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 128px;
+
+    background-color: var(--color-creamAlt);
+
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: var(--container-7xl);
+    margin-inline: auto;
+}
+
+.intro {
+    width: 100%;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--color-sand);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.octagon {
+    position: relative;
+
+    display: grid;
+    flex: 0 0 90px;
+    place-items: center;
+
+    width: 90px;
+    height: 90px;
+
+    color: var(--color-white);
+}
+
+.octagonSvg {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.octagonNumber {
+    position: relative;
+    z-index: 1;
+
+    color: var(--color-white);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.eyebrowLabel {
+    display: inline-block;
+
+    color: var(--color-sand);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.title {
+    margin: 1.5rem 0 0;
+
+    color: var(--color-white);
+    font-family: var(--font-wulkan-display), serif;
+    font-size: clamp(3rem, 5.6vw, 5rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+
+    text-wrap: balance;
+}
+
+.titleReveal {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+    row-gap: clamp(2.5rem, 4vw, 4rem);
+
+    margin: clamp(3rem, 5vw, 5rem) 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.pillar {
+    min-width: 0;
+    text-align: center;
+}
+
+.pillarContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    gap: 1.25rem;
+}
+
+.iconFrame {
+    position: relative;
+
+    display: grid;
+    flex: 0 0 110px;
+    place-items: center;
+
+    width: 110px;
+    height: 110px;
+}
+
+.hexagonReveal {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hexagon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.iconReveal {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+}
+
+.icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-white);
+}
+
+.pillarTitle {
+    max-width: 24rem;
+    margin: 0;
+
+    color: var(--color-sand);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+
+    text-align: center;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+}
+
+.pillarTitleReveal {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 2rem;
+        row-gap: 3rem;
+    }
+
+    .title {
+        font-size: clamp(3rem, 7vw, 4.5rem);
+    }
+}
+
+@media (max-width: 540px) {
+    .section {
+        padding: 
+            8rem
+            1.25rem
+            4rem;
+    }
+
+    .decorativeBlock {
+        display: none;
+    }
+
+    .eyebrow {
+        gap: 0.75rem;
+    }
+
+    .octagon {
+        flex-basis: 76px;
+        width: 76px;
+        height: 76px;
+    }
+
+    .title {
+        margin-top: 1.25rem;
+        font-size: clamp(2.5rem, 10vw, 3.25rem);
+        letter-spacing: -0.02em;
+    }
+
+    .grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.75rem;
+
+        margin-top: 3rem;
+    }
+
+    .pillarTitle {
+        max-width: 20rem;
+        font-size: 1.375rem;
+    }
+}
