@@ -149,7 +149,7 @@ export function AboutUs() {
                                     +
                                 </span>
 
-                                <CountUp value={1000} />
+                                <CountUp value={1050} />
                             </div>
 
                             <ScrollReveal 
@@ -183,7 +183,7 @@ export function AboutUs() {
                                     +
                                 </span>
 
-                                <CountUp value={150} />
+                                <CountUp value={145} />
                             </div>
 
                             <ScrollReveal
@@ -238,7 +238,7 @@ export function AboutUs() {
                             *Inclui Gestores de Portfólio / Traders
                             e Pod PMs responsáveis pela gestão ativa
                             de capital. Dados atualizados em 1º de
-                            setembro de 2026.
+                            Outubro de 2026.
                         </ScrollReveal>
                     </div>
                 </div>
