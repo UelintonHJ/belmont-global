@@ -235,7 +235,7 @@
 
 .metricsColumn {
     display: grid;
-    grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 210px) minmax(0, 1fr);
     column-gap: clamp(1rem, 2vw, 2rem);
     align-content: start;
     min-width: 0;
@@ -263,6 +263,14 @@
     padding-top: 0;
 }
 
+.metric:nth-child(2) {
+    --metric-reveal-delay: 250ms;
+}
+
+.metric:nth-child(3) {
+    --metric-reveal-delay: 500ms;
+}
+
 .metricNumber {
     display: flex;
     grid-column: 1;
@@ -288,7 +296,7 @@
 .metricTitle,
 .metricDescription {
     min-width: 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
 }
 
 .metricTitle {
@@ -304,6 +312,10 @@
     line-height: 1.5;
 }
 
+.metricTitle {
+    --reveal-delay: var(--metric-reveal-delay, 0ms);
+}
+
 .metricDescription {
     grid-column: 2;
     grid-row: 2;
@@ -317,6 +329,10 @@
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.65;
+}
+
+.metricDescription {
+    --reveal-delay: calc(var(--metric-reveal-delay, 0ms) + 120ms);
 }
 
 .footnote {
@@ -364,6 +380,31 @@
         font-size: 0.6em;
     }
 }
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .statsGrid {
+        grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    }
+
+    .historyColumn {
+        padding-right: 1.5rem;
+    }
+
+    .metricsColumn {
+        padding-left: 1.5rem;
+        grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+        column-gap: 1rem;
+    }
+
+    .metricNumber {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
+    .metricPlus {
+        font-size: 0.6em;
+    }
+}
+
 
 @media (max-width: 700px) {
     .section {
@@ -414,6 +455,7 @@
     .metricsColumn {
         margin-top: 2rem;
         padding-top: 1rem;
+        grid-template-columns: minmax(0, 1fr);
         padding-left: 0;
 
         border-top: 1px solid var(--about-divider);
@@ -421,7 +463,9 @@
     }
 
     .metric {
-        column-gap: 1rem;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto auto;
+        row-gap: 0.25rem;
         padding: 1.5rem 0;
     }
 
@@ -430,14 +474,26 @@
     }
 
     .metricNumber {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        align-self: start;
+
         font-size: clamp(2.5rem, 10vw, 3.5rem);
     }
 
     .metricTitle {
         font-size: 1.125rem;
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 0.25rem;
     }
 
     .metricDescription {
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 0.25rem;
+        max-width: none;
         font-size: 1rem;
         line-height: 1.55;
     }
@@ -477,20 +533,4 @@
     .detailsArrow {
         transition: none;
     }
-}
-
-.metric:nth-child(2) {
-    --metric-reveal-delay: 250ms;
-}
-
-.metric:nth-child(3) {
-    --metric-reveal-delay: 500ms;
-}
-
-.metricTitle {
-    --reveal-delay: var(--metric-reveal-delay, 0ms);
-}
-
-.metricDescription {
-    --reveal-delay: calc(var(--metric-reveal-delay, 0ms) + 120ms);
 }

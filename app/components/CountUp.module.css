@@ -1,6 +1,10 @@
 .countUp {
     display: inline-grid;
     grid-template-columns: max-content;
+    width: max-content;
+    min-width: max-content;
+    flex: 0 0 auto;
+    
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
 }

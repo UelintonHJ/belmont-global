@@ -22,8 +22,8 @@
     display: grid;
     place-items: center;
 
-    min-height: max(28rem, calc(100vh - 136px));
-    min-height: max(28rem, calc(100svh - 136px));
+    min-height: max(28rem, 100vh);
+    min-height: max(28rem, 100svh);
 
     overflow: hidden;
     padding: clamp(3rem, 8vw, 7rem) 1.5rem;
@@ -278,8 +278,8 @@
 
 @media (max-width: 480px) {
     .hero {
-        min-height: max(28rem, calc(100vh - 100px));
-        min-height: max(28rem, calc(100svh - 100px));
+        min-height: max(28rem, 100vh);
+        min-height: max(28rem, 100svh);
 
         padding-inline: 1.25rem;
     }
