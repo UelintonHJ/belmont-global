@@ -2,6 +2,7 @@ import { Hero } from "./components/Hero";
 import { AboutUs } from "./components/AboutUs";
 import { InvestmentApproach } from "./components/InvestmentApproach";
 import { AtAGlance } from "./components/AtAGlance";
+import { Culture } from "./components/Culture";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <AboutUs />
         <InvestmentApproach />
         <AtAGlance />
+        <Culture />
       </main>
   );
 }
