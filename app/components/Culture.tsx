@@ -4,7 +4,7 @@ import styles from "./Culture.module.css";
 import { ScrollReveal } from "./ScrollReveal";
 
 export function Culture() {
-    return  (
+    return (
         <section
             id="culture"
             className={styles.section}
@@ -13,7 +13,7 @@ export function Culture() {
             <div className={styles.content}>
                 <div className={styles.headerGrid}>
                     <div className={styles.heading}>
-                        <ScrollReveal 
+                        <ScrollReveal
                             as="div"
                             className={styles.eyebrow}
                         >
@@ -26,7 +26,7 @@ export function Culture() {
                                     aria-hidden="true"
                                     focusable="false"
                                 >
-                                    <polygon 
+                                    <polygon
                                         points="26,1 64,1 89,26 89,64 64,89 26,89 1,64 1,26"
                                         stroke="currentColor"
                                         strokeWidth="1"
@@ -53,12 +53,12 @@ export function Culture() {
                         </h2>
                     </div>
 
-                    <ScrollReveal 
+                    <ScrollReveal
                         as="div"
                         variant="wipe"
                         className={styles.cultureImageFrame}
                     >
-                        <Image 
+                        <Image
                             src="/images/culture-img.webp"
                             alt="Cultura da Belmont Global"
                             width={944}
@@ -71,7 +71,7 @@ export function Culture() {
 
                 <div className={styles.bodyGrid}>
                     <div className={styles.leftColumn}>
-                        <ScrollReveal 
+                        <ScrollReveal
                             as="p"
                             className={styles.description}
                         >
@@ -81,12 +81,8 @@ export function Culture() {
                             nosso sucesso coletivo.
                         </ScrollReveal>
 
-                        <ScrollReveal 
-                            as="div"
-                            variant="wipe"
-                            className={styles.experienceImageFrame}
-                        >
-                            <Image 
+                        <div className={styles.experienceImageFrame}>
+                            <Image
                                 src="/images/experience-img.webp"
                                 alt="Experiência profissional na Belmont Global"
                                 width={1301}
@@ -94,16 +90,16 @@ export function Culture() {
                                 sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 960px) 100vw, (max-width: 1280px) 60vw, 769px"
                                 className={styles.experienceImage}
                             />
-                        </ScrollReveal>
+                        </div>
                     </div>
 
                     <div className={styles.rightColumn}>
-                        <ScrollReveal 
+                        <ScrollReveal
                             as="p"
                             className={styles.description}
                         >
-                            Unimos pessoas altamente qualificadas com 
-                            habilidades sinérgicas e autonomia de 
+                            Unimos pessoas altamente qualificadas com
+                            habilidades sinérgicas e autonomia de
                             pensamento, oferecendo um ambiente focado
                             em colaboração, meritocracia, iniciativa
                             e integridade.
@@ -113,17 +109,18 @@ export function Culture() {
                             as="p"
                             className={styles.description}
                         >
-                            Investimos continuamente no desenvolvimento 
-                            e na evolução profissional das nossas 
-                            equipes, garantindo o ambiente ideal para 
+                            Investimos continuamente no desenvolvimento
+                            e na evolução profissional das nossas
+                            equipes, garantindo o ambiente ideal para
                             que todos performem no seu mais alto nível.
                         </ScrollReveal>
 
-                        <ScrollReveal 
+                        <ScrollReveal
                             as="div"
-                            className={styles.detailsReveal}    
+                            variant="center"
+                            className={styles.detailsReveal}
                         >
-                            <a 
+                            <a
                                 className={styles.detailsLink}
                                 href="#carreira"
                             >
@@ -139,7 +136,7 @@ export function Culture() {
                                     aria-hidden="true"
                                     focusable="false"
                                 >
-                                    <path 
+                                    <path
                                         d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
                                         stroke="currentColor"
                                         strokeWidth="1.25"

@@ -104,6 +104,9 @@
 }
 
 .cultureImageFrame {
+    --scroll-reveal-wipe-background: #fff;
+    --scroll-reveal-wipe-overlay: var(--culture-outline);
+
     width: 100%;
     max-width: 284.44px;
     height: 368.86px;

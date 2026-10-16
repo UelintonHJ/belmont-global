@@ -24,7 +24,10 @@
     isolation: isolate;
     overflow: hidden;
 
-    background-color: var(--color-creamAlt);
+    background-color: var(
+        --scroll-reveal-wipe-background, 
+        var(--color-creamAlt)
+    );
     opacity: 1;
 }
 
@@ -42,7 +45,10 @@
 
     width: 0;
 
-    background-color: var(--color-tan);
+    background-color: var(
+        --scroll-reveal-wipe-overlay, 
+        var(--color-tan)
+    );
 
     content: "";
     pointer-events: none;
