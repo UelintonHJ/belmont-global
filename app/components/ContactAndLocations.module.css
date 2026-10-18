@@ -93,12 +93,19 @@
     text-wrap: balance;
 }
 
+.titleText {
+    display: block;
+}
+
+.contactLinkReveal {
+    width: fit-content;
+    margin-top: 1.5rem;
+}
+
 .contactLink {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-
-    margin-top: 1.5rem;
 
     color: var(--contact-heading);
     font-family: var(--font-rt-rondelle), sans-serif;
