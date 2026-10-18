@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "./Careers.module.css";
+import { ScrollReveal } from "./ScrollReveal";
 
 export function Careers() {
     return (
@@ -10,7 +11,10 @@ export function Careers() {
             aria-labelledby="careers-title"
         >
             <div className={styles.content}>
-                <div className={styles.eyebrow}>
+                <ScrollReveal
+                    as="div"
+                    className={styles.eyebrow}
+                >
                     <div
                         className={styles.octagon}
                         aria-hidden="true"
@@ -22,7 +26,7 @@ export function Careers() {
                             fill="none"
                             focusable="false"
                         >
-                            <polygon 
+                            <polygon
                                 points="26,1 64,1 89,26 89,64 64,89 26,89 1,64 1,26"
                                 stroke="currentColor"
                                 strokeWidth="1"
@@ -37,28 +41,37 @@ export function Careers() {
                     <span className={styles.eyebrowLabel}>
                         CARREIRAS
                     </span>
-                </div>
+                </ScrollReveal>
 
                 <div className={styles.mainGrid}>
                     <div className={styles.copy}>
-                        <h2
-                            id="careers-title"
-                            className={styles.title}
-                        >
-                            Trabalhe na Belmont Global
-                        </h2>
+                        <ScrollReveal as="div">
+                            <h2
+                                id="careers-title"
+                                className={styles.title}
+                            >
+                                Trabalhe na Belmont Global
+                            </h2>
+                        </ScrollReveal>
 
-                        <p className={styles.description}>
+                        <ScrollReveal
+                            as="p"
+                            className={styles.description}
+                        >
                             Estamos sempre em busca de talentos
                             excepcionais para integrar nossa equipe
                             global. Procuramos profissionais
                             intelectualmente curiosos, apaixonados
                             pelo que fazem e alinhados com nossa
                             missão e valores.
-                        </p>
+                        </ScrollReveal>
 
-                        <div className={styles.details}>
-                            <a 
+                        <ScrollReveal 
+                            as="div"
+                            variant="center"
+                            className={styles.details}
+                        >
+                            <a
                                 className={styles.detailsLink}
                                 href="#carreira"
                             >
@@ -74,7 +87,7 @@ export function Careers() {
                                     aria-hidden="true"
                                     focusable="false"
                                 >
-                                    <path 
+                                    <path
                                         d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
                                         stroke="currentColor"
                                         strokeWidth="1.25"
@@ -83,15 +96,19 @@ export function Careers() {
                                     />
                                 </svg>
                             </a>
-                        </div>
+                        </ScrollReveal>
                     </div>
 
                     <div
                         className={styles.imageComposition}
                         aria-label="Imagens relacionadas ao ambiente de trabalho"
                     >
-                        <div className={styles.imageFramePrimary}>
-                            <Image 
+                        <ScrollReveal
+                            as="div"
+                            variant="wipe"
+                            className={styles.imageFramePrimary}
+                        >
+                            <Image
                                 src="/images/careers-img.webp"
                                 alt="Ambiente profissional"
                                 width={922}
@@ -99,10 +116,14 @@ export function Careers() {
                                 sizes="(max-width: 700px) 78vw, (max-width: 1100px) 27vw, 390px"
                                 className={styles.image}
                             />
-                        </div>
+                        </ScrollReveal>
 
-                        <div>
-                            <Image 
+                        <ScrollReveal
+                            as="div"
+                            variant="wipeReverse"
+                            className={styles.imageFrameSecondary}
+                        >
+                            <Image
                                 src="/images/working-img.webp"
                                 alt="Profissionais em seu ambiente de trabalho"
                                 width={923}
@@ -110,7 +131,7 @@ export function Careers() {
                                 sizes="(max-width: 700px) 78vw, (max-width: 1100px) 27vw, 390px"
                                 className={styles.image}
                             />
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </div>

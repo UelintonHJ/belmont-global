@@ -179,10 +179,12 @@
 
 .imageFramePrimary,
 .imageFrameSecondary {
+    --scroll-reveal-wipe-background: #f6f5f2;
+    --scroll-reveal-wipe-overlay: #ece9e5;
+    
     width: 100%;
     min-width: 0;
     overflow: hidden;
-    background-color: var(--careers-outline);
 }
 
 .imageFramePrimary {

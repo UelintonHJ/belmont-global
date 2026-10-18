@@ -7,7 +7,7 @@ import styles from "./ScrollReveal.module.css";
 type ScrollRevealProps = {
     as: "div" | "span" | "p";
     className?: string;
-    variant?: "up" | "center" | "left" | "right" | "wipe" | "scaleDown" | "grow";
+    variant?: "up" | "center" | "left" | "right" | "wipe" | "wipeReverse" | "scaleDown" | "grow";
     children: React.ReactNode;
 };
 
@@ -33,7 +33,7 @@ export function ScrollReveal({
         let hasStartedReveal = false;
 
         async function reveal(target: Element) {
-            if (variant === "wipe") {
+            if (variant === "wipe" || variant === "wipeReverse") {
                 const image = target.querySelector("img");
 
                 if (image) {

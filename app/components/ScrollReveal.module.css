@@ -19,39 +19,60 @@
     transform: translateX(2rem);
 }
 
-.wipe {
+.wipe,
+.wipeReverse {
     position: relative;
     isolation: isolate;
     overflow: hidden;
 
-    background-color: var(
-        --scroll-reveal-wipe-background, 
-        var(--color-creamAlt)
+    background-color: var( 
+        --scroll-reveal-wipe-background,
+        #f6f5f2
     );
+
     opacity: 1;
 }
 
-.wipe>img {
+.wipe img,
+.wipeReverse img {
     display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.wipe img {
     clip-path: inset(0 100% 0 0);
 }
 
-.wipe::after {
+.wipeReverse img {
+    clip-path: inset(0 0 0 100%);
+}
+
+.wipe::after,
+.wipeReverse::after {
     position: absolute;
     z-index: 1;
     top: 0;
     bottom: 0;
-    left: 0;
-
-    width: 0;
+    width: 100%;
 
     background-color: var(
         --scroll-reveal-wipe-overlay, 
-        var(--color-tan)
+        #ece9e5
     );
 
     content: "";
     pointer-events: none;
+}
+
+.wipe::after {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.wipeReverse::after {
+    right: 0;
+    transform: translateX(100%);
 }
 
 .scaleDown {
@@ -85,9 +106,20 @@
     animation: revealWipe 2.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.isVisible.wipe>img {
-    animation: revealWipeImage 2.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+.isVisible.wipe img {
+    animation: revealWipeImage 2.5s 
+        cubic-bezier(0.22, 1, 0.36, 1) both;
     transform-origin: right center;
+}
+
+.isVisible.wipeReverse::after {
+    animation: revealWipeReverse 2.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.isVisible.wipeReverse img {
+    animation: revealWipeImageReverse 2.5s 
+        cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: left center;
 }
 
 .isVisible.scaleDown {
@@ -168,18 +200,49 @@
 
 @keyframes revealWipe {
     0% {
-        left: 0;
-        width: 0;
+        transform: translateX(-100%);
     }
 
     40% {
-        left: 0;
-        width: 100%;
+        transform: translateX(0);
     }
 
     100% {
-        left: 100%;
-        width: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes revealWipeImageReverse {
+    0% {
+        clip-path: inset(0 0 0 100%);
+        opacity: 0;
+        transform: scale(1.5);
+    }
+
+    40% {
+        clip-path: inset(0 0 0 100%);
+        opacity: 0.1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes revealWipeReverse {
+    0% {
+        transform: translateX(100%);
+    }
+
+    40% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }
 
@@ -214,12 +277,19 @@
         animation: none;
     }
 
-    .wipe>img {
+    .wipe img,
+    .wipeReverse img {
         clip-path: none;
         animation: none;
     }
 
-    .wipe::after {
+    .wipe,
+    .wipeReverse {
+        background-color: transparent;
+    }
+
+    .wipe::after,
+    .wipeReverse::after {
         display: none;
         animation: none;
     }
