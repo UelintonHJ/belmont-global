@@ -1,0 +1,306 @@
+.footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: clamp(3rem, 6vw, 5rem)
+        clamp(1.25rem, 4vw, 3rem);
+    
+    background-color: var(--color-night-alt);
+    color: var(--color-white);
+}
+
+.content {
+    width: 100%;
+    max-width: var(--container-7xl);
+    margin-inline: auto;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    align-items: stretch;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding-right: clamp(2rem, 4vw, 4rem);
+    border-right: 1px solid rgb(255 255 255 / 50%);
+}
+
+.logoLink {
+    display: inline-flex;
+    width: min(384px, 100%);
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.navigationGrid,
+.secondaryGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    column-gap: clamp(1rem, 2vw, 2rem);
+}
+
+.navigationGrid {
+    margin-top: 2.5rem;
+}
+
+.secondaryGrid {
+    margin-top: 2.5rem;
+}
+
+.primaryNavigation,
+.socialNavigation,
+.legalNavigation,
+.accessNavigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.primaryNavigation,
+.socialNavigation {
+    gap: 0.75rem;
+}
+
+.legalNavigation,
+.accessNavigation {
+    gap: 0.625rem;
+}
+
+.primaryLink,
+.digitalLink,
+.socialLink,
+.secondaryLink,
+.contactLink {
+    width: fit-content;
+    max-width: 100%;
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-weight: 400;
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 1px;
+    text-decoration-thickness: 1px;
+    overflow-wrap: anywhere;
+}
+
+.primaryLink,
+.digitalLink,
+.socialLink {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.primaryLink {
+    color: var(--color-white);
+}
+
+.primaryLink:hover,
+.primaryLink:focus-visible {
+    text-decoration-color: var(--color-white);
+}
+
+.digitalLink {
+    color: var(--color-turquoise);
+}
+
+.digitalLink:hover,
+.digitalLink:focus-visible {
+    text-decoration-color: var(--color-turquoise);
+}
+
+.socialLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-white);
+}
+
+.socialLink:hover,
+.socialLink:focus-visible {
+    text-decoration-color: var(--color-white);
+}
+
+.socialIcon {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 4px;
+    color: rgb(255 255 255 / 50%);
+}
+
+.secondaryLink {
+    color: rgb(255 255 255 / 50%);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.secondaryLink:hover,
+.secondaryLink:focus-visible {
+    color: var(--color-white);
+    text-decoration-color: var(--color-white);
+}
+
+.copyright {
+    margin: 2rem 0 0;
+    color: rgb(255 255 255 / 50%);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding-left: clamp(2rem, 4vw, 4rem);
+}
+
+.contactTitle {
+    margin: 0;
+    color: var(--color-white);
+    font-family: var(--font-wulkan-display), serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.contactGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.contactLabel,
+.contactDetail {
+    margin: 0;
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contactLabel {
+    color: var(--color-white);
+}
+
+.contactDetail {
+    color: rgb(255 255 255 / 50%);
+}
+
+.contactLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+    width: 100%;
+}
+
+.contactLink {
+    color: rgb(255 255 255 / 50%);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contactLink:hover,
+.contactLink:focus-visible {
+    text-decoration-color: rgb(255 255 255 / 50%);
+}
+
+.logoLink:focus-visible,
+.primaryLink:focus-visible,
+.digitalLink:focus-visible,
+.socialLink:focus-visible,
+.secondaryLink:focus-visible,
+.contactLink:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 4px;
+}
+
+@media (max-width: 980px) {
+    .mainGrid {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 3rem;
+    }
+
+    .information {
+        padding-right: 0;
+        padding-bottom: 3rem;
+        border-right: 0;
+        border-bottom: 1px solid rgb(255 255 255 / 50%);
+    }
+
+    .contact {
+        padding-left: 0;
+    }
+
+    .socialLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logoLink {
+        width: min(384px, 100%);
+    }
+}
+
+@media (max-width: 520px) {
+    .footer {
+        padding-block: 3rem;
+    }
+
+    .navigationGrid,
+    .secondaryGrid {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 1.5rem;
+    }
+
+    .navigationGrid,
+    .secondaryGrid {
+        margin-top: 2rem;
+    }
+
+    .socialLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contactTitle {
+        font-size: 32px;
+    }
+
+    .contactGroup {
+        margin-top: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .primaryLink,
+    .digitalLink,
+    .socialLink,
+    .secondaryLink,
+    .contactLink {
+        transition: none;
+    }
+}
