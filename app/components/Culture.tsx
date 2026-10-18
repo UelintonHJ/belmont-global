@@ -39,7 +39,7 @@ export function Culture() {
                             </div>
 
                             <span className={styles.eyebrowLabel}>
-                                Cultura
+                                CULTURA
                             </span>
                         </ScrollReveal>
 

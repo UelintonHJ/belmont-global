@@ -32,7 +32,7 @@ export function AboutUs() {
                         </div>
 
                         <span className={styles.eyebrowLabel}>
-                            Quem Somos
+                            QUEM SOMOS
                         </span>
                     </ScrollReveal>
 
