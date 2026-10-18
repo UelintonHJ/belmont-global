@@ -4,6 +4,7 @@ import { InvestmentApproach } from "./components/InvestmentApproach";
 import { AtAGlance } from "./components/AtAGlance";
 import { Culture } from "./components/Culture";
 import { Careers } from "./components/Careers";
+import { ContactAndLocations } from "./components/ContactAndLocations";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
         <AtAGlance />
         <Culture />
         <Careers />
+        <ContactAndLocations 
+          contactHref=""
+        />
       </main>
   );
 }
