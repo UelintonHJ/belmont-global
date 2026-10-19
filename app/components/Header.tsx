@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 
 import styles from "./Header.module.css";
 
 const navigationLinks = [
-    { label: "Quem Somos", href: "#sobre-nos", animation: styles.staggerAbout },
+    { label: "Quem Somos", href: "/about-us", animation: styles.staggerAbout },
     { label: "Carreira", href: "#carreira", animation: styles.staggerCareer },
     { label: "Contato", href: "#contato", animation: styles.staggerContact },
     { label: "BG Digital", href: "#bg-digital", animation: styles.staggerDigital },
@@ -17,6 +18,8 @@ const SCROLL_THRESHOLD = 3;
 const TOP_THRESHOLD = 8;
 
 export function Header() {
+    const pathname = usePathname();
+
     const [isVisible, setIsVisible] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [animationCycle, setAnimationCycle] = useState(0);
@@ -122,18 +125,31 @@ export function Header() {
                     className={styles.navigation}
                     aria-label="Navegação principal"
                 >
-                    {navigationLinks.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className={`${styles.navLink} ${link.animation}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
+                    {navigationLinks.map((link) => {
+                        const isActive =
+                            link.href === "/about-us" &&
+                            pathname === "/about-us";
 
-                    <Link 
+                        return (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={[
+                                    styles.navLink,
+                                    link.animation,
+                                    isActive ? styles.activeNavLink : "",
+                                ]
+                                    .filter(Boolean)
+                                    .join(" ")}
+                                aria-current={isActive ? "page" : undefined}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {link.label}
+                            </Link>
+                        );
+                    })}
+
+                    <Link
                         href="/"
                         className={`${styles.loginLink} ${styles.staggerLogin}`}
                         onClick={() => setIsMenuOpen(false)}

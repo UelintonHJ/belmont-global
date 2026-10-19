@@ -142,6 +142,14 @@
   outline-offset: 5px;
 }
 
+.activeNavLink {
+  color: #fff;
+  text-decoration-line: underline;
+  text-decoration-color: rgb(255 255 255 / 50%);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+
 .menuToggle {
   display: none;
   align-items: center;

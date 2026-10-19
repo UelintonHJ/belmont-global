@@ -113,6 +113,13 @@
     text-decoration-color: var(--color-white);
 }
 
+.primaryLink[data-active="true"] {
+    text-decoration-line: underline;
+    text-decoration-color: #fff;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+}
+
 .digitalLink {
     color: var(--color-turquoise);
 }
