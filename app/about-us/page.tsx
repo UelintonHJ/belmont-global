@@ -5,7 +5,7 @@ import styles from "./AboutUs.module.css";
 
 export const metadata: Metadata = {
     title: "Quem Somos | Belmont Global",
-    description: 
+    description:
         "Conheça a Belmont Global, plataforma global de gestão de investimentos alternativos fundada em 2002.",
 };
 
@@ -28,7 +28,7 @@ export default function AboutUsPage() {
                                     aria-hidden="true"
                                     focusable="false"
                                 >
-                                    <polygon 
+                                    <polygon
                                         points="26,1 64,1 89,26 89,64 64,89 26,89 1,64 1,26"
                                         stroke="currentColor"
                                         strokeWidth="1"
@@ -55,18 +55,18 @@ export default function AboutUsPage() {
                         <div className={styles.description}>
                             <p>
                                 Fundada em 2002, somos uma plataforma global e
-                                líder em gestão de investimentos alternativos, 
+                                líder em gestão de investimentos alternativos,
                                 especializada em estratégias macro globais e
                                 ativos digitais. Gestamos recursos para
-                                investidores institucionais no mundo todo, 
-                                incluindo fundos soberanos, fundos de pensão 
+                                investidores institucionais no mundo todo,
+                                incluindo fundos soberanos, fundos de pensão
                                 corporativos e públicos, fundações e endowments.
                             </p>
 
                             <p>
                                 Contamos com mais de 1.050 colaboradores, mais
-                                de 145 Gestores de Carteira* e 9 Hubs com 
-                                escritórios em São Paulo, Nova York, Londres, 
+                                de 145 Gestores de Carteira* e 9 Hubs com
+                                escritórios em São Paulo, Nova York, Londres,
                                 Genebra, Jersey, Hong Kong, Abu Dhabi, Cingapura
                                 e Austin.
                             </p>
@@ -78,7 +78,7 @@ export default function AboutUsPage() {
                     </div>
 
                     <figure className={styles.imageContainer}>
-                        <Image 
+                        <Image
                             src="/images/aboutUs-img.webp"
                             alt="Imagem institucional da Belmont Global"
                             width={843}
@@ -88,6 +88,64 @@ export default function AboutUsPage() {
                             className={styles.image}
                         />
                     </figure>
+                </div>
+            </section>
+
+            <section
+                className={styles.quoteSection}
+                aria-label="Depoimento de Eduardo Prado"
+            >
+                <div className={styles.quoteContent}>
+                    <figure className={styles.portraitContainer}>
+                        <Image
+                            src="/images/eduardo-prado-img.webp"
+                            alt="Eduardo Prado, diretor executivo da Belmont Global"
+                            width={1008}
+                            height={1043}
+                            sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 504px"
+                            className={styles.portrait}
+                        />
+                    </figure>
+
+                    <div className={styles.quoteCopy}>
+                        <div className={styles.quoteOpening}>
+                            <Image
+                                src="/images/quotes.svg"
+                                alt=""
+                                aria-hidden="true"
+                                width={39}
+                                height={34}
+                                className={styles.quoteMark}
+                            />
+
+                            <blockquote className={styles.quoteText}>
+                                Nosso propósito é gerar retornos consistentes e
+                                de excelência para nossos clientes em qualquer
+                                cenário macroeconômico.
+                            </blockquote>
+                        </div>
+
+                        <div className={styles.quoteClosing}>
+                            <Image
+                                src="/images/quotes.svg"
+                                alt=""
+                                aria-hidden="true"
+                                width={39}
+                                height={34}
+                                className={`${styles.quoteMark} ${styles.quoteMarkClosing}`}
+                            />
+                        </div>
+
+                        <div className={styles.quoteDivider} />
+
+                        <p className={styles.quoteAuthor}>
+                            Eduardo Prado
+                        </p>
+
+                        <p className={styles.quoteRole}>
+                            Diretor Executivo (CEO)
+                        </p>
+                    </div>
                 </div>
             </section>
         </main>
