@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import styles from "./InvestmentApproach.module.css";
-import { ScrollReveal } from "./ScrollReveal";
+import styles from "../styles/InvestmentApproach.module.css";
+import { ScrollReveal } from "../../components/ScrollReveal";
 
 export function InvestmentApproach() {
     return (

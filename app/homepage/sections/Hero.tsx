@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import styles from "./Hero.module.css";
+import styles from "../styles/Hero.module.css";
 
 export function Hero() {
     const [isImageReady, setIsImageReady] = useState(false);

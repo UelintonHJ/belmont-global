@@ -8,8 +8,8 @@ import { MdAnalytics } from "react-icons/md";
 import { PiTreeStructureFill } from "react-icons/pi";
 import { FaSearchDollar } from "react-icons/fa";
 
-import styles from "./AtAGlance.module.css";
-import { ScrollReveal } from "./ScrollReveal";
+import styles from "../styles/AtAGlance.module.css";
+import { ScrollReveal } from "../../components/ScrollReveal";
 
 const pillars: { title: string; Icon: IconType }[] = [
     {

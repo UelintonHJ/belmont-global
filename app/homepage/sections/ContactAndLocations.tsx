@@ -1,5 +1,5 @@
-import { ScrollReveal } from "./ScrollReveal";
-import styles from "./ContactAndLocations.module.css";
+import { ScrollReveal } from "../../components/ScrollReveal";
+import styles from "../styles/ContactAndLocations.module.css";
 
 type ContactAndLocationsProps = {
     contactHref: string;

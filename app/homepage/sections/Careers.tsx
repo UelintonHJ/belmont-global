@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import styles from "./Careers.module.css";
-import { ScrollReveal } from "./ScrollReveal";
+import styles from "../styles/Careers.module.css";
+import { ScrollReveal } from "../../components/ScrollReveal";
 
 export function Careers() {
     return (

@@ -1,6 +1,6 @@
-import styles from "./AboutUs.module.css"
-import { CountUp } from "./CountUp";
-import { ScrollReveal } from "./ScrollReveal";
+import styles from "../styles/AboutUs.module.css"
+import { CountUp } from "../../components/CountUp";
+import { ScrollReveal } from "../../components/ScrollReveal";
 
 export function AboutUs() {
     return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import styles from "./Culture.module.css";
-import { ScrollReveal } from "./ScrollReveal";
+import styles from "../styles/Culture.module.css";
+import { ScrollReveal } from "../../components/ScrollReveal";
 
 export function Culture() {
     return (
