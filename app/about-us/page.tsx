@@ -7,6 +7,7 @@ import AboutDifferentials from "./sections/AboutDifferentials";
 import AboutExpertise from "./sections/AboutExpertise";
 import MacroThinking from "./sections/MacroThinking";
 import TradeStructure from "./sections/TradeStructure";
+import RiskManagement from "./sections/RiskManagement";
 
 export const metadata: Metadata = {
     title: "Quem Somos | Belmont Global",
@@ -24,6 +25,7 @@ export default function AboutUsPage() {
             <AboutExpertise />
             <MacroThinking />
             <TradeStructure />
+            <RiskManagement />
         </main>
     );
 }

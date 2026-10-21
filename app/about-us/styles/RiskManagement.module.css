@@ -1,0 +1,204 @@
+.riskManagementSection {
+    box-sizing: border-box;
+    width: 100%;
+    padding: clamp(4rem, 7vw, 7rem) clamp(1.25rem, 4vw, 3rem);
+
+    background-color: var(--color-white);
+    color: var(--color-navy-def);
+}
+
+.riskManagementContent {
+    width: 100%;
+    max-width: var(--container-7xl);
+    margin-inline: auto;
+}
+
+.riskManagementNumber {
+    display: block;
+
+    color: var(--color-sandOnWhite);
+    font-family: var(--font-canela), serif;
+    font-size: 316px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.riskManagementGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(2.5rem, 5vw, 4rem);
+
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.riskManagementCopy {
+    min-width: 0;
+    padding-top: 0.5rem;
+}
+
+.riskManagementTitle {
+    margin: 0;
+
+    color: var(--color-navy-def);
+    font-family: var(--font-wulkan-display), serif;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+.riskManagementTopics {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+
+    margin-top: 2rem;
+}
+
+.riskManagementTopic {
+    min-width: 0;
+}
+
+.riskManagementTopicTitle {
+    margin: 0;
+
+    color: var(--color-navy-def);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+.riskManagementTopicDescription {
+    margin: 0.625rem 0 0;
+
+    color: var(--color-slate);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.65;
+
+    overflow-wrap: break-word;
+}
+
+.riskManagementVisuals {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+
+    min-width: 0;
+    width: 100%;
+}
+
+.riskManagementImageFramePrimary,
+.riskManagementImageFrameSecondary {
+    min-width: 0;
+    margin-block: 0;
+    overflow: hidden;
+
+    background-color: var(--color-cream);
+}
+
+.riskManagementImageFramePrimary {
+    width: min(100%, 355.19px);
+    margin-inline: auto 0;
+
+    aspect-ratio: 355.19 / 459.52;
+}
+
+.riskManagementImageFrameSecondary {
+    width: min(100%, 473.59px);
+    margin-inline: 0 auto;
+
+    aspect-ratio: 473.59 / 592.53;
+}
+
+.riskManagementImage {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 1100px) {
+    .riskManagementNumber {
+        font-size: clamp(12rem, 25vw, 19.75rem);
+    }
+
+    .riskManagementGrid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        column-gap: 2.5rem;
+    }
+
+    .riskManagementTitle {
+        font-size: clamp(3.5rem, 6.5vw 5rem);
+    }
+}
+
+@media (max-width: 790px) {
+    .riskManagementSection {
+        padding: 4rem 1.25rem;
+    }
+
+    .riskManagementNumber {
+        font-size: clamp(8rem, 25vw, 12rem);
+        line-height: 0.95;
+        letter-spacing: -0.025em;
+    }
+
+    .riskManagementGrid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+
+        margin-top: 1.5rem;
+    }
+
+    .riskManagementCopy {
+        padding-top: 0;
+    }
+
+    .riskManagementTitle {
+        font-size: clamp(3rem, 8vw, 4.5rem);
+        letter-spacing: -0.02em;
+    }
+
+    .riskManagementTopics {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .riskManagementVisuals {
+        gap: 1.5rem;
+    }
+
+    .riskManagementImageFramePrimary {
+        margin-inline: 0 auto;
+    }
+
+    .riskManagementImageFrameSecondary {
+        margin-inline: auto 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .riskManagementNumber {
+        font-size: 7rem;
+    }
+
+    .riskManagementTitle {
+        font-size: 2.75rem;
+    }
+}
