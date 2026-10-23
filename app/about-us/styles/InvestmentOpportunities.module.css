@@ -123,6 +123,14 @@
     gap: 1.25rem;
 }
 
+.investmentOpportunitiesDescription > p:nth-child(1) {
+    --reveal-delay: 220ms;
+}
+
+.investmentOpportunitiesDescription > p:nth-child(2) {
+    --reveal-delay: 420ms;
+}
+
 .investmentOpportunitiesDescription p,
 .investmentOpportunitiesContact p {
     margin: 0;
@@ -135,17 +143,27 @@
     gap: 1.5rem;
 }
 
+.investmentOpportunitiesContact > p {
+    --reveal-delay: 620ms;
+}
+
 .investmentOpportunitiesLink {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
+    
 
     color: var(--color-white);
     font-family: var(--font-rt-rondelle), sans-serif;
     font-size: 15px;
     font-weight: 400;
     line-height: 1.5;
+}
 
+.investmentOpportunitiesLinkReveal {
+    --reveal-delay: 1s;
+    
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    
     text-decoration-line: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: 1px;
@@ -155,22 +173,22 @@
     transition: text-decoration-color 180ms ease;
 }
 
-.investmentOpportunitiesLink:hover {
+.investmentOpportunitiesLinkReveal:hover {
     text-decoration-color: var(--color-white);
 }
 
-.investmentOpportunitiesLink:hover
+.investmentOpportunitiesLinkReveal:hover
 .investmentOpportunitiesArrow {
     transform: translateX(4px);
 }
 
-.investmentOpportunitiesLink:focus-visible {
+.investmentOpportunitiesLinkReveal:focus-visible {
     outline: 2px solid var(--color-white);
     outline-offset: 5px;
     text-decoration-color: var(--color-white);
 }
 
-.investmentOpportunitiesLink:focus-visible
+.investmentOpportunitiesLinkReveal:focus-visible
 .investmentOpportunitiesArrow {
     transform: translateX(4px);
 }
