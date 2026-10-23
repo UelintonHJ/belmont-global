@@ -1,6 +1,16 @@
 import Link from "next/link";
 
+import GlobeCanvas from "./GlobeCanvas";
 import styles from "../styles/InvestmentOpportunities.module.css";
+
+const GLOBE_LEGEND = [
+    { label: "Renda Fixa", color: "#FFBB37" },
+    { label: "Câmbio", color: "#9CEA4F" },
+    { label: "Commodities", color: "#9472F6" },
+    { label: "Renda Variável", color: "#E98EEB" },
+    { label: "Ativos Digitais", color: "#61D9FF" },
+    { label: "Crédito Privado", color: "#FDFF87" },
+] as const;
 
 export default function InvestmentOpportunities() {
     return (
@@ -106,6 +116,37 @@ export default function InvestmentOpportunities() {
                         </Link>
                     </div>
                 </div>
+
+                <GlobeCanvas 
+                    className={styles.globeCanvas}
+                />
+
+                <ul
+                    className={styles.globeLegend}
+                    aria-label="Categorias de investimento representadas no globo"
+                >
+                    {GLOBE_LEGEND.map((item) => (
+                        <li
+                            key={item.label}
+                            className={styles.globeLegendItem}
+                        >
+                            <span
+                                className={styles.globeLegendColor}
+                                style={{ backgroundColor: item.color }}
+                                aria-hidden="true"
+                            />
+
+                            <span className={styles.globeLegendLabel}>
+                                {item.label}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+
+                <p className={styles.globeLegendDisclaimer}>
+                    Os marcadores são exibidos meramente para fins ilustrativos e não
+                    representam a exposição real dos investimentos.
+                </p>
             </div>
         </section>
     );

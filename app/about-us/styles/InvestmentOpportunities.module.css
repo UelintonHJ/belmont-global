@@ -175,6 +175,85 @@
     transform: translateX(4px);
 }
 
+.globeCanvas {
+    position: relative;
+    width: 100vw;
+    height: clamp(32rem, 60vw, 52rem);
+    margin-top: clamp(3rem, 6vw, 6rem);
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+
+    pointer-events: none;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(42, 54, 73, 0.3) 0%,
+        rgba(23, 30, 43, 0) 68%
+    );
+}
+
+.globeCanvas canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.globeLegend {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.globeLegendItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    min-width: 0;
+    padding: 0 1.25rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.globeLegendItem:last-child {
+    border-right: none;
+}
+
+.globeLegendColor {
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.globeLegendLabel {
+    color: #fff;
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.globeLegendDisclaimer {
+    width: 100%;
+    margin: 1.25rem auto 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: pretty;
+}
+
 @media (max-width: 1100px) {
     .investmentOpportunitiesTitle {
         font-size: clamp(3.5rem, 6.5vw, 5rem);
@@ -187,6 +266,29 @@
     .investmentOpportunitiesDescription,
     .investmentOpportunitiesContact {
         font-size: 18px;
+    }
+}
+
+@media (max-width: 960px) {
+    .globeLegend {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 1.5rem;
+    }
+
+    .globeLegend {
+        box-sizing: border-box;
+        padding-inline: 0.75rem;
+    }
+
+    .globeLegendItem:nth-child(3n) {
+        border-right: none;
+    }
+
+    .globeLegendDisclaimer {
+        max-width: 540px;
+        padding-inline: 0.5rem;
+        margin-top: 1.5rem;
     }
 }
 
@@ -225,6 +327,31 @@
     .investmentOpportunitiesContact {
         gap: 1.25rem;
     }
+
+    .globeCanvas {
+        height: clamp(28rem, 90vw, 40rem);
+        margin-top: 2.5rem;
+    }
+
+    .globeLegendItem {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .globeLegend {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 1.25rem;
+    }
+
+    .globeLegendItem:nth-child(3n) {
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .globeLegendItem:nth-child(2n) {
+        border-right: none;
+    }
 }
 
 @media (max-width: 420px) {
@@ -241,6 +368,26 @@
 
     .investmentOpportunitiesTitle {
         font-size: clamp(2.5rem, 10vw, 2.75rem);
+    }
+
+    .globeCanvas {
+        height: 28rem;
+        margin-top: 2rem;
+    }
+
+    .globeLegend {
+        row-gap: 1rem;
+    }
+
+    .globeLegendItem {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+
+    .globeLegendDisclaimer {
+        max-width: 100%;
+        padding-inline: 0.25rem;
+        font-size: 14px;
     }
 }
 
