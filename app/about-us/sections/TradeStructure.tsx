@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/TradeStructure.module.css";
 
 export default function TradeStructure() {
@@ -14,7 +16,9 @@ export default function TradeStructure() {
                         className={styles.tradeStructureVisuals}
                         aria-label="Imagens ilustrativas"
                     >
-                        <figure
+                        <ScrollReveal
+                            as="figure"
+                            variant="wipeReverse"
                             className={`${styles.tradeStructureImageFramePrimary}`}
                         >
                             <Image
@@ -26,9 +30,11 @@ export default function TradeStructure() {
                                 sizes="(max-width: 790px) min(100vw - 40px, 474px), (max-width: 1100px) 42vw, 474px"
                                 className={styles.tradeStructureImage}
                             />
-                        </figure>
+                        </ScrollReveal>
 
-                        <figure
+                        <ScrollReveal
+                            as="figure"
+                            variant="wipe"
                             className={`${styles.tradeStructureImageFrameSecondary}`}
                         >
                             <Image
@@ -40,42 +46,49 @@ export default function TradeStructure() {
                                 sizes="(max-width: 790px) min(88vw, 355px), (max-width: 1100px) 34vw, 355px"
                                 className={styles.tradeStructureImage}
                             />
-                        </figure>
+                        </ScrollReveal>
                     </div>
 
                     <div className={styles.tradeStructureCopy}>
-                        <span
+                        <ScrollReveal
+                            as="span"
+                            variant="fade"
                             className={styles.tradeStructureNumber}
                             aria-hidden="true"
                         >
                             02
-                        </span>
+                        </ScrollReveal>
 
-                        <h2
-                            id="trade-structure-title"
-                            className={styles.tradeStructureTitle}
+                        <ScrollReveal
+                            as="div"
+                            variant="up"
                         >
-                            Estruturação de Operações
-                        </h2>
+                            <h2
+                                id="trade-structure-title"
+                                className={styles.tradeStructureTitle}
+                            >
+                                Estruturação de Operações
+                            </h2>
+                        </ScrollReveal>
 
                         <div className={styles.tradeStructureDescription}>
-                            <p>
+                            <ScrollReveal as="p" variant="up">
                                 A estruturação de operações com assimetria
                                 inerente de resultado (P&amp;L) nos permite
                                 compreender melhor as probabilidades dos
                                 diferentes cenários precificados pelo mercado
                                 e contruir relações atrativas de
                                 risco-retorno.¹
-                            </p>
+                            </ScrollReveal>
 
-                            <p>
+                            <ScrollReveal as="p" variant="up">
                                 Criamos assimetria por meio do uso de opções
                                 e estruturas derivativas equivalentes, bem
                                 como pelo uso disciplinado de ordens de
                                 stop-loss.²
-                            </p>
+                            </ScrollReveal>
 
-                            <p>
+                            <ScrollReveal as="p" variant="up">
                                 As visões sobre a melhor estrutura para cada
                                 operações são ativamente debatidas em conjunto
                                 com os cenários de mercado. Nossos
@@ -83,7 +96,7 @@ export default function TradeStructure() {
                                 integrar suas especialidades em estruturação
                                 nos mais diversos mercados, visando otimizar
                                 a rentabilidade das estratégias.
-                            </p>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </div>
@@ -92,7 +105,11 @@ export default function TradeStructure() {
                     className={styles.tradeStructureLegalNotes}
                     aria-label="Notes legais"
                 >
-                    <p className={styles.tradeStructureLegalNote}>
+                    <ScrollReveal
+                        as="p"
+                        variant="up"
+                        className={styles.tradeStructureLegalNote}
+                    >
                         <strong>
                             1. Referências a Rentabilidade Futura e Isenção
                             de Responsabilidade:
@@ -117,9 +134,13 @@ export default function TradeStructure() {
                         operações derivativas complexas, as quais podem
                         aumentar a exposição e o risco de perdas
                         patrimoniais.
-                    </p>
+                    </ScrollReveal>
 
-                    <p className={styles.tradeStructureLegalNote}>
+                    <ScrollReveal
+                        as="p"
+                        variant="up"
+                        className={styles.tradeStructureLegalNote}
+                    >
                         <strong>
                             2. Ordens de Stop-Loss e Stop-Limit em Contratos
                             Futuros:
@@ -134,7 +155,7 @@ export default function TradeStructure() {
                         mercado, liquidez ou volatilidade extrema pode
                         impossibilitar a execução ou preço de stop
                         estipulado.
-                    </p>
+                    </ScrollReveal>
                 </div>
             </div>
         </section>
