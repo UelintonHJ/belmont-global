@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, type ElementType } from "react";
 import styles from "./ScrollReveal.module.css";
 
 type ScrollRevealProps = {
-    as: "div" | "span" | "p";
+    as: "div" | "span" | "p" | "figure";
     className?: string;
     variant?: "up" | "center" | "left" | "right" | "wipe" | "wipeReverse" | "scaleDown" | "grow";
     children: React.ReactNode;
