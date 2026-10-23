@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/AboutQuote.module.css";
 
 export default function AboutQuote() {
@@ -9,7 +11,11 @@ export default function AboutQuote() {
             aria-label="Depoimento de Eduardo Prado"
         >
             <div className={styles.quoteContent}>
-                <figure className={styles.portraitContainer}>
+                <ScrollReveal
+                    as="figure"
+                    variant="wipeReverse"
+                    className={styles.portraitContainer}
+                >
                     <Image
                         src="/images/eduardo-prado-img.webp"
                         alt="Eduardo Prado, diretor executivo da Belmont Global"
@@ -18,9 +24,13 @@ export default function AboutQuote() {
                         sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 45vw, 504px"
                         className={styles.portrait}
                     />
-                </figure>
+                </ScrollReveal>
 
-                <div className={styles.quoteCopy}>
+                <ScrollReveal 
+                    as="div"
+                    variant="left"
+                    className={styles.quoteCopy}
+                >
                     <div className={styles.quoteOpening}>
                         <Image
                             src="/images/quotes.svg"
@@ -58,7 +68,7 @@ export default function AboutQuote() {
                     <p className={styles.quoteRole}>
                         Diretor Executivo (CEO)
                     </p>
-                </div>
+                </ScrollReveal>
             </div>
         </section>
     );

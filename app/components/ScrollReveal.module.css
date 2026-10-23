@@ -107,7 +107,7 @@
 }
 
 .isVisible.wipe img {
-    animation: revealWipeImage 2.5s 
+    animation: revealWipeImage 2.43s 
         cubic-bezier(0.22, 1, 0.36, 1) both;
     transform-origin: right center;
 }
@@ -117,7 +117,7 @@
 }
 
 .isVisible.wipeReverse img {
-    animation: revealWipeImageReverse 2.5s 
+    animation: revealWipeImageReverse 2.43s 
         cubic-bezier(0.22, 1, 0.36, 1) both;
     transform-origin: left center;
 }
