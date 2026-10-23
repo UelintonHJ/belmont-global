@@ -61,6 +61,18 @@
     margin-top: 2rem;
 }
 
+.riskManagementTopics > div:nth-child(1) {
+    --reveal-delay: 220ms;
+}
+
+.riskManagementTopics > div:nth-child(2) {
+    --reveal-delay: 420ms;
+}
+
+.riskManagementTopics > div:nth-child(3) {
+    --reveal-delay: 620ms;
+}
+
 .riskManagementTopic {
     min-width: 0;
 }
@@ -106,7 +118,7 @@
     margin-block: 0;
     overflow: hidden;
 
-    background-color: var(--color-cream);
+    background-color: var(--color-white);
 }
 
 .riskManagementImageFramePrimary {
