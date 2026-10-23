@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/AboutDifferentials.module.css";
 
 import { BsPersonArmsUp } from "react-icons/bs";
@@ -53,39 +55,45 @@ export default function AboutDifferentials() {
             aria-labelledby="differentials-title"
         >
             <div className={styles.differentialsContent}>
-                <h2
-                    id="differentials-title"
-                    className={styles.differentialsTitle}
-                >
-                    Diferenciais da Belmont Global
-                </h2>
+                <ScrollReveal as="div" variant="up">
+                    <h2
+                        id="differentials-title"
+                        className={styles.differentialsTitle}
+                    >
+                        Diferenciais da Belmont Global
+                    </h2>
+                </ScrollReveal>
 
                 <ul className={styles.differentialsGrid}>
                     {differentials.map(
                         ({ title, description, Icon }) => (
                             <li
-                                key={title}
-                                className={styles.differentialCard}
-                            >
-                                <Icon
-                                    className={styles.differentialIcon}
-                                    aria-hidden="true"
-                                    focusable="false"
-                                />
-
-                                <h3
-                                    className={styles.differentialTitle}
+                                key={title}>
+                                <ScrollReveal
+                                    as="div"
+                                    variant="up"
+                                    className={styles.differentialCard}
                                 >
-                                    {title}
-                                </h3>
+                                    <Icon
+                                        className={styles.differentialIcon}
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    />
 
-                                <p
-                                    className={
-                                        styles.differentialDescription
-                                    }
-                                >
-                                    {description}
-                                </p>
+                                    <h3
+                                        className={styles.differentialTitle}
+                                    >
+                                        {title}
+                                    </h3>
+
+                                    <p
+                                        className={
+                                            styles.differentialDescription
+                                        }
+                                    >
+                                        {description}
+                                    </p>
+                                </ScrollReveal>
                             </li>
                         ),
                     )}

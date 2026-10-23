@@ -54,6 +54,30 @@
     list-style: none;
 }
 
+.differentialsGrid > li:nth-child(1) {
+    --reveal-delay: 0ms;
+}
+
+.differentialsGrid > li:nth-child(2) {
+    --reveal-delay: 200ms;
+}
+
+.differentialsGrid > li:nth-child(3) {
+    --reveal-delay: 400ms;
+}
+
+.differentialsGrid > li:nth-child(4) {
+    --reveal-delay: 600ms;
+}
+
+.differentialsGrid > li:nth-child(5) {
+    --reveal-delay: 800ms;
+}
+
+.differentialsGrid > li:nth-child(6) {
+    --reveal-delay: 1000ms;
+}
+
 .differentialCard {
     display: flex;
     flex-direction: column;
