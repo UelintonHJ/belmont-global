@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "../styles/AboutResults.module.css";
+import { ScrollReveal } from "@/app/components/ScrollReveal";
 
 export default function AboutResults() {
     return (
@@ -17,7 +18,11 @@ export default function AboutResults() {
                     um mercado em constante evolução.
                 </p>
 
-                <figure>
+                <ScrollReveal
+                    as="figure"
+                    variant="wipeReverse"
+                    className={styles.resultsImageContainer}
+                >
                     <Image
                         src="/images/best-results-img.webp"
                         alt=""
@@ -26,7 +31,7 @@ export default function AboutResults() {
                         sizes="(max-width: 790px) calc(100vw - 40px), (max-width: 1328px) 46vw, 600px"
                         className={styles.resultsImage}
                     />
-                </figure>
+                </ScrollReveal>
             </div>
         </section>
     );
