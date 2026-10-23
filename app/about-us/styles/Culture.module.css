@@ -1,0 +1,152 @@
+.cultureSection {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: clamp(26rem, 41.68vw, 41rem);
+    overflow: hidden;
+    padding: clamp(3rem, 7vw, 7rem) clamp(1.25rem, 4vw, 3rem);
+
+    background-color: var(--color-navy-def);
+    color: var(--color-white);
+}
+
+.cultureImage {
+    z-index: -2;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cultureOverlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        90deg,
+        rgba(20, 28, 37, 0.72) 0%,
+        rgba(20, 28, 37, 0.35) 48%,
+        rgba(20, 28, 37, 0.08) 100%
+    );
+}
+
+.cultureContent {
+    width: 100%;
+    max-width: var(--container-7xl);
+    margin-inline: auto;
+}
+
+.cultureTitle {
+    margin: 0;
+
+    color: #fff;
+    font-family: var(--font-wulkan-display), serif;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+.cultureDetails {
+    margin-top: 1.25rem;
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.cultureDetailsSummary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: fit-content;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+    text-decoration-skip-ink: auto;
+
+    transition: text-decoration-color 180ms ease;
+}
+
+.cultureDetailsSummary::-webkit-details-marker {
+    display: none;
+}
+
+.cultureDetailsSummary::marker {
+    content: "";
+}
+
+.cultureDetailsSummary:hover {
+    text-decoration-color: #fff;
+}
+
+.cultureDetailsSummary:hover .cultureArrow {
+    transform: translateX(4px)
+}
+
+.cultureDetailsSummary:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+    text-decoration-color: #fff;
+}
+
+.cultureDetailsSummary:focus-visible .cultureArrow {
+    transform: translateX(4px);
+}
+
+.cultureArrow {
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    transition: transform 180ms ease;
+}
+
+@media (max-width: 790px) {
+    .cultureSection {
+        min-height: clamp(25rem, 65vw, 34rem);
+        padding: 4rem 1.25rem;
+    }
+
+    .cultureTitle {
+        font-size: clamp(3.5rem, 8vw, 4.5rem);
+        letter-spacing: -0.02em;
+    }
+
+    .cultureOverlay {
+        background: linear-gradient(
+            90deg,
+            rgba(20, 28, 37, 0.68) 0%,
+            rgba(20, 28, 37, 0.3) 100%
+        );
+    }
+}
+
+@media (max-width: 420px) {
+    .cultureSection {
+        min-height: 25rem;
+        padding-block: 3rem;
+    }
+
+    .cultureTitle {
+        font-size: clamp(2.75rem, 11vw, 3.5rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cultureDetailsSummary,
+    .cultureArrow {
+        transition: none;
+    }
+}

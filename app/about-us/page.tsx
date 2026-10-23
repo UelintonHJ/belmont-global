@@ -9,6 +9,7 @@ import MacroThinking from "./sections/MacroThinking";
 import TradeStructure from "./sections/TradeStructure";
 import RiskManagement from "./sections/RiskManagement";
 import InvestmentOpportunities from "./sections/InvestmentOpportunities";
+import Culture from "./sections/Culture";
 
 export const metadata: Metadata = {
     title: "Quem Somos | Belmont Global",
@@ -28,6 +29,7 @@ export default function AboutUsPage() {
             <TradeStructure />
             <RiskManagement />
             <InvestmentOpportunities />
+            <Culture />
         </main>
     );
 }
