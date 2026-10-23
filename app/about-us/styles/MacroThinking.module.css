@@ -60,6 +60,18 @@
     margin-top: 2rem;
 }
 
+.macroThinkingTopics > div:nth-child(1) {
+    --reveal-delay: 220ms;
+}
+
+.macroThinkingTopics > div:nth-child(2) {
+    --reveal-delay: 420ms;
+}
+
+.macroThinkingTopics > div:nth-child(3) {
+    --reveal-delay: 620ms;
+}
+
 .macroThinkingTopic {
     min-width: 0;
 }
@@ -97,7 +109,7 @@
     aspect-ratio: 864 / 1232;
     overflow: hidden;
 
-    background-color: var(--color-cream);
+    background-color: var(--color-white);
 }
 
 .macroThinkingImage {
