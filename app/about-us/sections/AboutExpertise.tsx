@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/AboutExpertise.module.css";
 
 const expertisePillars = [
@@ -36,7 +38,7 @@ export default function AboutExpertise() {
 
             <div className={styles.expertiseContent}>
                 <div className={styles.expertiseIntroduction}>
-                    <div className={styles.expertiseEyebrow}>
+                    <ScrollReveal as="div" variant="up" className={styles.expertiseEyebrow}>
                         <div className={styles.expertiseOctagon}>
                             <svg
                                 className={styles.expertiseOctagonSvg}
@@ -61,34 +63,40 @@ export default function AboutExpertise() {
                         <span className={styles.expertiseEyebrowLabel}>
                             ABORDAGEM DE INVESTIMENTO
                         </span>
-                    </div>
+                    </ScrollReveal>
 
-                    <h2
-                        id="expertise-title"
-                        className={styles.expertiseTitle}
-                    >
-                        Três Pilares de Expertise
-                    </h2>
+                    <ScrollReveal as="div" variant="up">
+                        <h2
+                            id="expertise-title"
+                            className={styles.expertiseTitle}
+                        >
+                            Três Pilares de Expertise
+                        </h2>
+                    </ScrollReveal>
 
                     <div className={styles.expertiseDescriptionGrid}>
-                        <p>
+                        <ScrollReveal as="p" variant="up">
                             Nossa abordagem de gestão combina estratégias
                             direcionais, de valor relativo (relative value) e
                             derivativos, desenhadas para gerar retornos
                             descorrelacionados e complementares através de uma
                             ampla gama de soluções de investimento.
-                        </p>
+                        </ScrollReveal>
 
-                        <p>
+                        <ScrollReveal as="p" variant="up">
                             Diferenciamos nosso processo de investimento por meio
                             de três pilares fundamentais: visão macroeconômica,
                             estruturação de operações e gestão de risco.
-                        </p>
+                        </ScrollReveal>
                     </div>
                 </div>
 
                 <div className={styles.expertisePillarsGrid}>
-                    <figure className={styles.expertiseImageContainer}>
+                    <ScrollReveal
+                        as="figure"
+                        variant="wipe"
+                        className={styles.expertiseImageContainer}
+                    >
                         <Image
                             src="/images/pillars-expertise-img.webp"
                             alt=""
@@ -97,7 +105,7 @@ export default function AboutExpertise() {
                             sizes="(max-width: 790px) calc(100vw - 40px), (max-width: 1100px) 45vw, 600px"
                             className={styles.expertiseImage}
                         />
-                    </figure>
+                    </ScrollReveal>
 
                     <ol className={styles.expertisePillarsList}>
                         {expertisePillars.map((pillar) => (
@@ -105,14 +113,23 @@ export default function AboutExpertise() {
                                 key={pillar.number}
                                 className={styles.expertisePillar}
                             >
-                                <span
-                                    className={styles.expertisePillarNumber}
-                                    aria-hidden="true"
+                                <ScrollReveal
+                                    as="div"
+                                    variant="right"
                                 >
-                                    {pillar.number}
-                                </span>
+                                    <span
+                                        className={styles.expertisePillarNumber}
+                                        aria-hidden="true"
+                                    >
+                                        {pillar.number}
+                                    </span>
+                                </ScrollReveal>
 
-                                <div className={styles.expertisePillarContent}>
+                                <ScrollReveal
+                                    as="div"
+                                    variant="left"
+                                    className={styles.expertisePillarContent}
+                                >
                                     <h3 className={styles.expertisePillarTitle}>
                                         {pillar.title}
                                     </h3>
@@ -120,7 +137,7 @@ export default function AboutExpertise() {
                                     <p className={styles.expertisePillarDescription}>
                                         {pillar.description}
                                     </p>
-                                </div>
+                                </ScrollReveal>
                             </li>
                         ))}
                     </ol>
