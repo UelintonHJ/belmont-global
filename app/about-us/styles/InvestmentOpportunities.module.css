@@ -147,6 +147,10 @@
     --reveal-delay: 620ms;
 }
 
+.investmentOpportunitiesContact a {
+    text-decoration-line: underline;
+}
+
 .investmentOpportunitiesLink {
     
 

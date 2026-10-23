@@ -93,7 +93,7 @@ export default function InvestmentOpportunities() {
                         <ScrollReveal as="p" variant="up">
                             Para obter mais informações sobre nossa família
                             de fundos e estratégias, faça o login ou entre
-                            em contato conosco.
+                            em <a href="#">contato conosco</a>.
                         </ScrollReveal>
 
 
