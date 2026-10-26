@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa6";
-import { FooterAboutLink } from "./FooterAboutLink";
+import { FooterLink } from "./FooterLink";
 
 import styles from "./Footer.module.css";
 
@@ -31,14 +31,9 @@ export function Footer() {
                                 className={styles.primaryNavigation}
                                 aria-label="Navegação institucional"
                             >
-                                <FooterAboutLink />
+                                <FooterLink href="/about-us">Quem Somos</FooterLink>
 
-                                <Link
-                                    href="#carreira"
-                                    className={styles.primaryLink}
-                                >
-                                    Carreiras
-                                </Link>
+                                <FooterLink href="/careers">Carreiras</FooterLink>
 
                                 <Link
                                     href="#contato"

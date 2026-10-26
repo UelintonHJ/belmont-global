@@ -9,7 +9,7 @@ import styles from "./Header.module.css";
 
 const navigationLinks = [
     { label: "Quem Somos", href: "/about-us", animation: styles.staggerAbout },
-    { label: "Carreira", href: "#carreira", animation: styles.staggerCareer },
+    { label: "Carreiras", href: "/careers", animation: styles.staggerCareer },
     { label: "Contato", href: "#contato", animation: styles.staggerContact },
     { label: "BG Digital", href: "#bg-digital", animation: styles.staggerDigital },
 ];
@@ -127,8 +127,9 @@ export function Header() {
                 >
                     {navigationLinks.map((link) => {
                         const isActive =
-                            link.href === "/about-us" &&
-                            pathname === "/about-us";
+                            (link.href === "/about-us" ||
+                                link.href === "/careers") &&
+                            pathname === link.href;
 
                         return (
                             <Link
