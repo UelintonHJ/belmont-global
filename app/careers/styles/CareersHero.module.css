@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
 
-    min-height: 720px;
+    min-height: clamp(900px, 100svh, 1100px);
     padding: 140px 6vw;
 
     overflow: hidden;
@@ -34,17 +34,17 @@
         90deg,
         color-mix(
             in srgb,
-            var(--color-night-def) 78%,
+            var(--color-night-def) 30%,
             transparent
         ) 0%,
         color-mix(
             in srgb,
-            var(--color-night-def) 48%,
+            var(--color-night-def) 45%,
             transparent
         ) 60%,
         color-mix(
             in srgb,
-            var(--color-night-def) 30%,
+            var(--color-night-def) 50%,
             transparent
         ) 100%
     );
@@ -283,7 +283,7 @@
 
 @media (max-width: 900px) {
     .hero {
-        min-height: 650px;
+        min-height: clamp(790px, 100svh, 910px);
         padding: 140px 5vw 80px;
     }
 
@@ -308,7 +308,7 @@
 
 @media (max-width: 560px) {
     .hero {
-        min-height: 650px;
+        min-height: clamp(830px, 100svh, 920px);
         padding: 140px 24px 56px;
     }
 
