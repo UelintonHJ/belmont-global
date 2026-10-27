@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { CareersHero } from "./section/CareersHero";
 import { CareersIntroduction } from "./section/CareersIntroduction";
+import { CareersCollaboration } from "./section/CareersCollaboration";
 
 export const metadata: Metadata = {
     title: "Carreiras | Belmont Global",
@@ -14,6 +15,7 @@ export default function CareersPage() {
         <main>
             <CareersHero />
             <CareersIntroduction />
+            <CareersCollaboration />
         </main>
     )
 }
