@@ -1,0 +1,191 @@
+.section {
+    box-sizing: border-box;
+    width: 100%;
+    padding: clamp(4rem, 7vw, 7rem)
+        clamp(1.25rem, 4vw, 3rem);
+
+    background-color: var(--color-white);
+    color: var(--color-navy-alt);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 5rem);
+
+    width: 100%;
+    max-width: var(--container-7xl);
+    margin-inline: auto;
+}
+
+.testimonialRow {
+    display: grid;
+    grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4.5rem);
+
+    min-width: 0;
+}
+
+.testimonialRowReverse {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+}
+
+.testimonialRowReverse .portraitFrame {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.testimonialRowReverse .quoteCard {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.portraitFrame {
+    width: 100%;
+    max-width: 240px;
+    height: 270px;
+    margin: 0;
+    overflow: hidden;
+
+    background-color: var(--color-porcelain);
+}
+
+.portrait {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.quoteCard {
+    min-width: 0;
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid var(--color-slateAlt);
+
+    font-family: var(--font-rt-rondelle), sans-serif;
+}
+
+.quoteOpening {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1rem, 2vw, 1.5rem);
+
+    min-width: 0;
+}
+
+.quoteMark {
+    display: block;
+    flex: 0 0 60px;
+
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+}
+
+.quoteText {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+
+    color: var(--color-navy-alt);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+.quoteClosing {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    min-height: 60px;
+}
+
+.quoteMarkClosing {
+    transform: rotate(180deg);
+}
+
+.quoteAuthor {
+    margin: 1.25rem 0 0;
+
+    color: var(--color-night-alt);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.35;
+
+    overflow-wrap: break-word;
+}
+
+.quoteRole {
+    margin: 0.5rem 0 0;
+
+    color: var(--color-slateAlt);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding-block: 4rem;
+    }
+
+    .content {
+        gap: 3rem;
+    }
+
+    .testimonialRow,
+    .eduardoRow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    .testimonialRowReverse .portraitFrame,
+    .testimonialRowReverse .quoteCard {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .portraitFrame {
+        margin-inline: auto;
+    }
+
+    .quoteOpening {
+        gap: 1rem;
+    }
+
+    .quoteText {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+}
+
+@media screen {
+    .quoteMark {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .quoteAuthor {
+        font-size: 22px;
+    }
+
+    .quoteRole {
+        font-size: 18px;
+    }
+}
