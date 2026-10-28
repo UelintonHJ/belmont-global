@@ -7,6 +7,7 @@ import { CareersTalentDevelopment } from "./section/CareersTalentDevelopment";
 import { CareersLeadershipTestimonials } from "./section/CareersLeadershipTestimonials";
 import { CareersCareerPaths } from "./section/CareersCareerPaths";
 import { CareersCulture } from "./section/CareersCulture";
+import { CareersTalentNetwork } from "./section/CareersTalentNetwork";
 
 export const metadata: Metadata = {
     title: "Carreiras | Belmont Global",
@@ -24,6 +25,7 @@ export default function CareersPage() {
             <CareersLeadershipTestimonials />
             <CareersCareerPaths />
             <CareersCulture />
+            <CareersTalentNetwork />
         </main>
     )
 }
