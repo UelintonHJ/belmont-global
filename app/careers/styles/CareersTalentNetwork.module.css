@@ -70,6 +70,8 @@
 }
 
 .description {
+    --reveal-delay: 180ms;
+
     margin: 0;
 
     color: var(--color-night-alt);
@@ -104,6 +106,10 @@
 
     cursor: pointer;
     transition: background-color 180ms ease;
+}
+
+.linkReveal {
+    --reveal-delay: 380ms;
 }
 
 .link:hover {
