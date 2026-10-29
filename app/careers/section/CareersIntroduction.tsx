@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/CareersIntroduction.module.css";
 
 export function CareersIntroduction() {
@@ -7,7 +9,7 @@ export function CareersIntroduction() {
             aria-label="Nossa filosofia e cultura"
         >
             <div className={styles.content}>
-                <p className={styles.paragraph}>
+                <ScrollReveal as="p" variant="up" className={styles.paragraph}>
                     Na Belmont Global, acreditamos que talentos
                     excepcionais não são definidos apenas pela
                     formação acadêmica ou pela trajetória
@@ -16,9 +18,9 @@ export function CareersIntroduction() {
                     questionam premissas, gerenciam riscos, enxergam
                     oportunidades negligenciadas pelo mercado e 
                     agem com disciplina sob pressão.
-                </p>
+                </ScrollReveal>
 
-                <p className={styles.paragraph}>
+                <ScrollReveal as="p" variant="up" className={`${styles.paragraph} ${styles.paragraphDelayReveal}`}>
                     Nosso ambiente de trabalho é guiado por uma
                     cultura de excelência impulsionada pela
                     colaboração, inovação, responsabilidade e um
@@ -26,7 +28,7 @@ export function CareersIntroduction() {
                     ancorados em nossa tradição como uma das
                     principais gestoras de investimento macro do
                     mercado global.
-                </p>
+                </ScrollReveal>
             </div>
         </section>
     );

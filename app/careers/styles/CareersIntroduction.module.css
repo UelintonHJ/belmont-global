@@ -31,6 +31,10 @@
     text-wrap: pretty;
 }
 
+.paragraphDelayReveal {
+    --reveal-delay: 180ms;
+}
+
 @media (max-width: 760px) {
     .section {
         padding: 4rem 1.25rem;
