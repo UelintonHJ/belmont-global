@@ -198,6 +198,18 @@
     appearance: none;
 }
 
+.searchJobReveal {
+    --reveal-delay: 180ms;
+}
+
+.searchLocationReveal {
+    --reveal-delay: 380ms;
+}
+
+.searchButtonReveal {
+    --reveal-delay: 580ms;
+}
+
 .clearButton {
     display: inline-flex;
     flex: 0 0 20px;

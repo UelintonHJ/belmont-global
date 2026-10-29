@@ -9,6 +9,8 @@ import {
     FiX,
 } from "react-icons/fi"
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/CareersHero.module.css";
 
 export function CareersHero() {
@@ -56,100 +58,108 @@ export function CareersHero() {
 
             <div className={styles.overlay} aria-hidden="true" />
 
-                <button
-                    type="button"
-                    className={styles.playbackButton}
-                    onClick={toogleVideoPlayback}
-                    aria-label={
-                        isPlaying
-                            ? "Pausar vídeo"
-                            : "Reproduzir vídeo"
-                    }
-                    aria-pressed={!isPlaying}
-                >
-                    {isPlaying ? (
-                        <FiPause aria-hidden="true" />
-                    ) : (
-                        <FiPlay aria-hidden="true" />
-                    )}
-                </button>
+            <button
+                type="button"
+                className={styles.playbackButton}
+                onClick={toogleVideoPlayback}
+                aria-label={
+                    isPlaying
+                        ? "Pausar vídeo"
+                        : "Reproduzir vídeo"
+                }
+                aria-pressed={!isPlaying}
+            >
+                {isPlaying ? (
+                    <FiPause aria-hidden="true" />
+                ) : (
+                    <FiPlay aria-hidden="true" />
+                )}
+            </button>
 
             <div className={styles.content}>
-                <h1
-                    id="careers-hero-title"
-                    className={styles.title}
-                >
-                    Construa o seu futuro conosco
-                </h1>
+                <ScrollReveal as="div" variant="center">
+                    <h1
+                        id="careers-hero-title"
+                        className={styles.title}
+                    >
+                        Construa o seu futuro conosco
+                    </h1>
+                </ScrollReveal>
 
                 <form
                     className={styles.searchForm}
                     role="search"
                     onSubmit={(event) => event.preventDefault()}
                 >
-                    <div className={styles.searchField}>
-                        <FiSearch
-                            className={styles.fieldIcon}
-                            aria-hidden="true"
-                        />
+                    <ScrollReveal as="div" variant="up" className={styles.searchJobReveal}>
+                        <div className={styles.searchField}>
+                            <FiSearch
+                                className={styles.fieldIcon}
+                                aria-hidden="true"
+                            />
 
-                        <input
-                            type="search"
-                            name="jobTitle"
-                            value={jobTitle}
-                            onChange={(event) => 
-                                setJobTitle(event.target.value)
-                            }
-                            placeholder="Pesquise o nome do cargo"
-                            aria-label="Pesquise o nome do cargo"
-                        />
+                            <input
+                                type="search"
+                                name="jobTitle"
+                                value={jobTitle}
+                                onChange={(event) =>
+                                    setJobTitle(event.target.value)
+                                }
+                                placeholder="Pesquise o nome do cargo"
+                                aria-label="Pesquise o nome do cargo"
+                            />
 
-                        {jobTitle.length > 0 && (
-                            <button
-                                type="button"
-                                className={styles.clearButton}
-                                aria-label="Limpar nome do cargo"
-                                onClick={() => setJobTitle("")}
-                            >
-                                <FiX aria-hidden="true" />
-                            </button>
-                        )}
-                    </div>
+                            {jobTitle.length > 0 && (
+                                <button
+                                    type="button"
+                                    className={styles.clearButton}
+                                    aria-label="Limpar nome do cargo"
+                                    onClick={() => setJobTitle("")}
+                                >
+                                    <FiX aria-hidden="true" />
+                                </button>
+                            )}
+                        </div>
+                    </ScrollReveal>
 
-                    <div className={styles.searchField}>
-                        <FiMapPin
-                            className={styles.fieldIcon}
-                            aria-hidden="true"
-                        />
+                    <ScrollReveal as="div" variant="up" className={styles.searchLocationReveal}>
+                        <div className={styles.searchField}>
+                            <FiMapPin
+                                className={styles.fieldIcon}
+                                aria-hidden="true"
+                            />
 
-                        <input
-                            type="text"
-                            name="location"
-                            value={location}
-                            onChange={(event) => setLocation(event.target.value)}
-                            placeholder="Pesquise a localização"
-                            aria-label="Pesquise a localização"
-                        />
+                            <input
+                                type="text"
+                                name="location"
+                                value={location}
+                                onChange={(event) => setLocation(event.target.value)}
+                                placeholder="Pesquise a localização"
+                                aria-label="Pesquise a localização"
+                            />
 
-                        {location.length > 0 && (
-                            <button
-                                type="button"
-                                className={styles.clearButton}
-                                aria-label="Limpar localização"
-                                onClick={() => setLocation("")}
-                            >
-                                <FiX aria-hidden="true" />
-                            </button>
-                        )}
-                    </div>
+                            {location.length > 0 && (
+                                <button
+                                    type="button"
+                                    className={styles.clearButton}
+                                    aria-label="Limpar localização"
+                                    onClick={() => setLocation("")}
+                                >
+                                    <FiX aria-hidden="true" />
+                                </button>
+                            )}
+                        </div>
+                    </ScrollReveal>
 
-                    <button
-                        type="submit"
-                        className={styles.searchButton}
-                    >
-                        <span>Procurar</span>
-                        <FiSearch aria-hidden="true" />
-                    </button>
+                    <ScrollReveal as="div" variant="right" className={styles.searchButtonReveal}>
+                        <button
+                            type="submit"
+                            className={styles.searchButton}
+                        >
+                            <span>Procurar</span>
+                            <FiSearch aria-hidden="true" />
+                        </button>
+                    </ScrollReveal>
                 </form>
             </div>
         </section>
