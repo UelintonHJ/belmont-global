@@ -78,6 +78,10 @@
     object-position: center;
 }
 
+.linkDelayReveal {
+    --reveal-delay: 180ms;
+}
+
 .link {
     position: absolute;
     z-index: 1;

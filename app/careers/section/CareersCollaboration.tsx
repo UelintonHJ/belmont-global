@@ -46,30 +46,31 @@ export function CareersCollaboration() {
                             unoptimized
                             sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1230px) 50vw, 716px"
                         />
-
-                        <a
-                            className={styles.link}
-                            href="#careers"
-                        >
-                            <span>Faça parte da equipe</span>
-
-                            <svg
-                                className={styles.arrow}
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 22"
-                                fill="none"
-                                aria-hidden="true"
-                                focusable="false"
+                        <ScrollReveal as="div" variant="center" className={styles.linkDelayReveal}>
+                            <a
+                                className={styles.link}
+                                href="#careers"
                             >
-                                <path
-                                    d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
-                                    stroke="currentColor"
-                                    strokeWidth="1.25"
-                                />
-                            </svg>
-                        </a>
+                                <span>Faça parte da equipe</span>
+
+                                <svg
+                                    className={styles.arrow}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 20 22"
+                                    fill="none"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <path
+                                        d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
+                                        stroke="currentColor"
+                                        strokeWidth="1.25"
+                                    />
+                                </svg>
+                            </a>
+                        </ScrollReveal>
                     </div>
                 </ScrollReveal>
             </div>
