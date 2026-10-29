@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/CareersCollaboration.module.css";
 
 const paragraphs = [
@@ -14,58 +16,62 @@ export function CareersCollaboration() {
             className={styles.section}
             aria-label="Colaboração na Belmont Global"
         >
-            <div 
+            <div
                 className={styles.blockDecorative}
                 aria-hidden="true"
             />
 
             <div className={styles.content}>
-                <div className={styles.copy}>
-                    {paragraphs.map((paragraph, index) => (
-                        <p
-                            className={styles.paragraph}
-                            key={index}
+                <ScrollReveal as="div" variant="up">
+                    <div className={styles.copy}>
+                        {paragraphs.map((paragraph, index) => (
+                            <p
+                                className={styles.paragraph}
+                                key={index}
+                            >
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
+                </ScrollReveal>
+                <ScrollReveal as="div" variant="wipeReverse">
+                    <div className={styles.imageFrame}>
+
+                        <Image
+                            className={styles.image}
+                            src="/images/collaboration-img.webp"
+                            alt="Profissionais colaborando em um ambiente de trabalho"
+                            width={1195}
+                            height={896}
+                            unoptimized
+                            sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1230px) 50vw, 716px"
+                        />
+
+                        <a
+                            className={styles.link}
+                            href="#careers"
                         >
-                            {paragraph}
-                        </p>
-                    ))}
-                </div>
+                            <span>Faça parte da equipe</span>
 
-                <div className={styles.imageFrame}>
-                    <Image 
-                        className={styles.image}
-                        src="/images/collaboration-img.webp"
-                        alt="Profissionais colaborando em um ambiente de trabalho"
-                        width={1195}
-                        height={896}
-                        unoptimized
-                        sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1230px) 50vw, 716px"
-                    />
-
-                    <a 
-                        className={styles.link}
-                        href="#careers"
-                    >
-                        <span>Faça parte da equipe</span>
-
-                        <svg
-                            className={styles.arrow}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 22"
-                            fill="none"
-                            aria-hidden="true"
-                            focusable="false"
-                        >
-                            <path 
-                                d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
-                                stroke="currentColor"
-                                strokeWidth="1.25"
-                            />
-                        </svg>
-                    </a>
-                </div>
+                            <svg
+                                className={styles.arrow}
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 22"
+                                fill="none"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path
+                                    d="M3.5 10h13M11 4.5 16.5 10 11 15.5"
+                                    stroke="currentColor"
+                                    strokeWidth="1.25"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </ScrollReveal>
             </div>
         </section>
     );
