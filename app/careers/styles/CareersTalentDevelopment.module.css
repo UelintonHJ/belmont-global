@@ -18,6 +18,10 @@
     margin-inline: auto;
 }
 
+.talentImageReveal {
+    background-color: var(--color-white);
+}
+
 .image {
     display: block;
 

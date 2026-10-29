@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/CareersTalentDevelopment.module.css";
 
 const paragraphs = [
@@ -14,26 +16,30 @@ export function CareersTalentDevelopment() {
             aria-label="Desenvolvimento de talentos"
         >
             <div className={styles.content}>
-                <Image
-                    className={styles.image}
-                    src="/images/talents-img.webp"
-                    alt="Profissionais em um ambiente de trabalho"
-                    width={1189}
-                    height={880}
-                    unoptimized
-                    sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1230px) 50vw, 573px"
-                />
+                <ScrollReveal as="div" variant="wipe" className={styles.talentImageReveal}>
+                    <Image
+                        className={styles.image}
+                        src="/images/talents-img.webp"
+                        alt="Profissionais em um ambiente de trabalho"
+                        width={1189}
+                        height={880}
+                        unoptimized
+                        sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1230px) 50vw, 573px"
+                    />
+                </ScrollReveal>
 
-                <div className={styles.copy}>
-                    {paragraphs.map((paragraph, index) => (
-                        <p
-                            className={styles.paragraph}
-                            key={index}
-                        >
-                            {paragraph}
-                        </p>
-                    ))}
-                </div>
+                <ScrollReveal as="div" variant="right">
+                    <div className={styles.copy}>
+                        {paragraphs.map((paragraph, index) => (
+                            <p
+                                className={styles.paragraph}
+                                key={index}
+                            >
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
+                </ScrollReveal>
             </div>
         </section>
     );
