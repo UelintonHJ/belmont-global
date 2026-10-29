@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/CareersLeadershipTestimonials.module.css";
 
 type TestimonialQuoteProps = {
@@ -40,13 +42,13 @@ function TestimonialQuote({
                 />
             </div>
 
-            <p className={styles.quoteAuthor}>
+            <ScrollReveal as="p" variant="right" className={`${styles.quoteAuthor} ${styles.quoteAuthorReveal}`}>
                 {name}
-            </p>
+            </ScrollReveal>
 
-            <p className={styles.quoteRole}>
+            <ScrollReveal as="p" variant="center" className={styles.quoteRole}>
                 {role}
-            </p>
+            </ScrollReveal>
         </div>
     );
 }
@@ -59,7 +61,7 @@ export function CareersLeadershipTestimonials() {
         >
             <div className={styles.content}>
                 <div className={styles.testimonialRow}>
-                    <figure className={styles.portraitFrame}>
+                    <ScrollReveal as="figure" variant="wipe" className={styles.portraitFrame}>
                         <Image
                             src="/images/alvaro-belmont-img.webp"
                             alt="Álvaro Belmont, cofundador da Belmont Global"
@@ -68,19 +70,21 @@ export function CareersLeadershipTestimonials() {
                             sizes="(max-width: 760px) 240px, 240px"
                             className={styles.portrait}
                         />
-                    </figure>
+                    </ScrollReveal>
 
-                    <TestimonialQuote
-                        quote="A Belmont Global é um espaço onde mentes brilhantes, independentemente de sua origem, encontram a oportunidade e o suporte necessários para realizar o melhor trabalho de suas carreiras."
-                        name="Álvaro Belmont"
-                        role="Cofundador"
-                    />
+                    <ScrollReveal as="div" variant="right">
+                        <TestimonialQuote
+                            quote="A Belmont Global é um espaço onde mentes brilhantes, independentemente de sua origem, encontram a oportunidade e o suporte necessários para realizar o melhor trabalho de suas carreiras."
+                            name="Álvaro Belmont"
+                            role="Cofundador"
+                        />
+                    </ScrollReveal>
                 </div>
 
                 <div
                     className={`${styles.testimonialRow} ${styles.testimonialRowReverse}`}
                 >
-                    <figure className={styles.portraitFrame}>
+                    <ScrollReveal as="figure" variant="wipeReverse" className={styles.portraitFrame}>
                         <Image
                             src="/images/eduardo-prado-careers-img.webp"
                             alt="Eduardo Prado, CEO da Belmont Global"
@@ -89,13 +93,15 @@ export function CareersLeadershipTestimonials() {
                             sizes="240px"
                             className={styles.portrait}
                         />
-                    </figure>
+                    </ScrollReveal>
 
-                    <TestimonialQuote
-                        quote="O nosso objetivo é continuar construindo um time de elite, composto por profissionais excepcionais que desafiam uns aos outros a performar no mais alto nível."
-                        name="Eduardo Prado"
-                        role="CEO"
-                    />
+                    <ScrollReveal as="div" variant="left">
+                        <TestimonialQuote
+                            quote="O nosso objetivo é continuar construindo um time de elite, composto por profissionais excepcionais que desafiam uns aos outros a performar no mais alto nível."
+                            name="Eduardo Prado"
+                            role="CEO"
+                        />
+                    </ScrollReveal>
                 </div>
             </div>
         </section>

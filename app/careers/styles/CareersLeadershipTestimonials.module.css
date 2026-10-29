@@ -48,7 +48,7 @@
     margin: 0;
     overflow: hidden;
 
-    background-color: var(--color-porcelain);
+    background-color: var(--color-white);
 }
 
 .portrait {
@@ -125,6 +125,10 @@
     line-height: 1.35;
 
     overflow-wrap: break-word;
+}
+
+.quoteAuthorReveal {
+    --reveal-delay: 520ms;
 }
 
 .quoteRole {
