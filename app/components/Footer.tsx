@@ -35,12 +35,7 @@ export function Footer() {
 
                                 <FooterLink href="/careers">Carreiras</FooterLink>
 
-                                <Link
-                                    href="#contato"
-                                    className={styles.primaryLink}
-                                >
-                                    Contato
-                                </Link>
+                                <FooterLink href="/contact">Contato</FooterLink>
 
                                 <Link
                                     href="#bg-digital"
@@ -50,7 +45,10 @@ export function Footer() {
                                 </Link>
                             </nav>
 
-                            <nav className={styles.socialLinks}>
+                            <nav 
+                                className={styles.socialLinks}
+                                aria-label="Redes sociais"    
+                            >
                                 <a 
                                     href="https://www.linkedin.com/company/belmont-global/"
                                     className={styles.socialLink}
