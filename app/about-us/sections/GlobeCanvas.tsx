@@ -331,7 +331,7 @@ function initializeGlobe(
                 0.05,
             );
 
-            rotation -= deltaSeconds * 0.22;
+            rotation += deltaSeconds * 0.22;
         }
 
         previousTime = time;
