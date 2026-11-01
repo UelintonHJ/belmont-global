@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ContactHero } from "./sections/ContactHero";
+import { ContactLocations } from "./sections/ContactLocations";
 
 export const metadata: Metadata = {
     title: "Contato | Belmont Global",
@@ -12,6 +13,7 @@ export default function ContactPage() {
     return (
         <main>
             <ContactHero />
+            <ContactLocations />
         </main>
-    )
+    );
 }

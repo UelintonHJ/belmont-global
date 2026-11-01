@@ -1,0 +1,370 @@
+.section {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 
+        clamp(5rem, 8vw, 8rem)
+        clamp(1.25rem, 5vw, 4.5rem);
+
+    background-color: var(--color-white);
+    color: var(--color-navy-def);
+}
+
+.content {
+    width: 100%;
+    max-width: var(--container-7xl);
+    margin-inline: auto;
+}
+
+.header {
+    margin-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--color-sandAlt);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.octagon {
+    position: relative;
+
+    display: grid;
+    flex: 0 0 90px;
+    place-items: center;
+
+    width: 90px;
+    height: 90px;
+
+    color: var(--color-cream);
+}
+
+.octagonSvg {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.octagonNumber {
+    position: relative;
+    z-index: 1;
+
+    color: var(--color-sandAlt);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.eyebrowLabel {
+    display: inline-block;
+    min-width: 0;
+
+    color: var(--color-sandAlt);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.title {
+    margin: 2rem 0 0;
+
+    color: var(--color-navy-def);
+    font-family: var(--font-wulkan-display), serif;
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+.locationsList {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(5rem, 10vw, 9rem);
+}
+
+.locationItem {
+    display: grid;
+    grid-template-columns: 
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+    gap: clamp(2rem, 5vw, 5rem);
+    row-gap: 0;
+
+    min-width: 0;
+}
+
+.locationInfo {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    align-self: center;
+}
+
+.country {
+    margin: 0;
+
+    color: var(--color-sandAlt);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.city {
+    margin: 2rem 0 0;
+
+    color: var(--color-navy-def);
+    font-family: var(--font-wulkan-display), serif;
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+.locationDetails {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+    align-self: start;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 0 clamp(1rem, 5vw, 5rem) 0;
+
+    color: var(--color-slate);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+.locationLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    width: fit-content;
+    margin-top: 0;
+
+    color: var(--color-navy-def);
+    font-family: var(--font-rt-rondelle), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+
+    transition: text-decoration-color 180ms ease;
+}
+
+.locationArrow {
+    display: block;
+    flex: 0 0 auto;
+
+    color: var(--color-navy-def);
+
+    transition: transform 180ms ease;
+}
+
+.locationLink:hover,
+.locationLink:focus-visible {
+    text-decoration-color: currentColor;
+}
+
+.locationLink:hover .locationArrow,
+.locationLink:focus-visible .locationArrow {
+    transform: translateX(3px);
+}
+
+.locationLink:focus-visible {
+    outline: 2px solid var(--color-navy-def);
+    outline-offset: 5px;
+}
+
+.imageFrame {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    position: relative;
+    width: 100%;
+    aspect-ratio: 624 / 740.91;
+
+    overflow: hidden;
+
+    background-color: var(--color-white);
+}
+
+.locationImage {
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 1100px) {
+    .locationItem {
+        column-gap: 2rem;
+    }
+
+    .locationInfo {
+        padding-top: clamp(0rem, 2vw, 1.5rem);
+    }
+
+    .city {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+    }
+
+    .address {
+        font-size: 1.125rem;
+        margin-top: clamp(1rem, 3vw, 3rem);
+    }
+}
+
+@media (max-width: 760px) {
+    .section {
+        padding-block: 5rem;
+    }
+
+    .header {
+        margin-bottom: 4rem;
+    }
+
+    .title {
+        margin-top: 1.5rem;
+        font-size: clamp(3rem, 9vw, 4.5rem);
+        letter-spacing: -0.02em;
+    }
+
+    .locationDetails {
+        width: 100%;
+    }
+
+    .locationsList {
+        gap: 5rem;
+    }
+
+    .locationItem {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .locationInfo,
+    .imageFrame,
+    .locationDetails {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .city {
+        margin-top: 0.5rem;
+        margin-bottom: 1.25rem;
+        font-size: clamp(3.5rem, 9vw, 5rem);
+    }
+
+    .address {
+        margin: 1.5rem 0 0;
+        font-size: 1.125rem;
+    }
+
+    .locationLink {
+        margin-top: 1.25rem;
+    }
+
+    .imageFrame {
+        max-width: 480px;
+        aspect-ratio: 4 / 3;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .section {
+        padding-inline: 1.25rem;
+    }
+
+    .eyebrow {
+        gap: 0.75rem;
+    }
+
+    .octagon {
+        flex-basis: 76px;
+        width: 76px;
+        height: 76px;
+    }
+
+    .eyebrowLabel {
+        font-size: 0.875rem;
+    }
+
+    .title {
+        font-size: clamp(2.5rem, 11vw, 3.25rem);
+    }
+
+    .locationItem {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .locationInfo {
+        width: 100%;
+    }
+
+    .country {
+        font-size: 1.125rem;
+    }
+
+    .city {
+        font-size: clamp(3rem, 12vw, 3.75rem);
+    }
+
+    .imageFrame {
+        max-width: 340px;
+    }
+
+    .locationDetails {
+        width: 100%;
+    }
+
+    .address {
+        margin-top: 1.25rem;
+        font-size: 1rem;
+    }
+
+    .locationLink {
+        margin-top: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .locationLink,
+    .locationArrow {
+        transition: none;
+    }
+}
