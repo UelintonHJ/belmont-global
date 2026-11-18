@@ -9,20 +9,30 @@ import styles from "./Footer.module.css";
 type FooterLinkProps = {
     href: string;
     children: ReactNode;
+    variant?: "default" | "digital";
 }
 
-export function FooterLink({ href, children}: FooterLinkProps) {
+export function FooterLink({ 
+    href, 
+    children, 
+    variant = "default", 
+}: FooterLinkProps) {
     const pathname = usePathname();
     const isActive = pathname === href;
+
+    const linkClassName =
+        variant === "digital"
+            ? styles.digitalLink
+            : styles.primaryLink;
 
     return (
         <Link
             href={href}
-            className={styles.primaryLink}
+            className={linkClassName}
             aria-current={isActive ? "page" : undefined}
             data-active={isActive}
         >
             {children}
         </Link>
-    )
+    );
 }

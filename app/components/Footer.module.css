@@ -124,6 +124,10 @@
     color: var(--color-turquoise);
 }
 
+.digitalLink[data-active="true"] {
+    text-decoration-color: var(--color-dg-v2-turquoise_on_dark);
+}
+
 .digitalLink:hover,
 .digitalLink:focus-visible {
     text-decoration-color: var(--color-turquoise);

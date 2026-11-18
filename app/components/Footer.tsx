@@ -43,12 +43,9 @@ export function Footer() {
                                     Contato
                                 </FooterLink>
 
-                                <Link
-                                    href="/bg-digital"
-                                    className={styles.digitalLink}
-                                >
+                                <FooterLink href="/bg-digital" variant="digital">
                                     BG Digital
-                                </Link>
+                                </FooterLink>
                             </nav>
 
                             <nav 

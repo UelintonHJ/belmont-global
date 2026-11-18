@@ -127,6 +127,8 @@ export function Header() {
                 >
                     {navigationLinks.map((link) => {
                         const isActive = pathname === link.href;
+                        const isDigitalActive =
+                            isActive && link.href === "/bg-digital";
 
                         return (
                             <Link
@@ -136,6 +138,9 @@ export function Header() {
                                     styles.navLink,
                                     link.animation,
                                     isActive ? styles.activeNavLink : "",
+                                    isDigitalActive
+                                        ? styles.activeDigitalNavLink
+                                        : "",
                                 ]
                                     .filter(Boolean)
                                     .join(" ")}
