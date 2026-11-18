@@ -11,7 +11,7 @@ const navigationLinks = [
     { label: "Quem Somos", href: "/about-us", animation: styles.staggerAbout },
     { label: "Carreiras", href: "/careers", animation: styles.staggerCareer },
     { label: "Contato", href: "/contact", animation: styles.staggerContact },
-    { label: "BG Digital", href: "#bg-digital", animation: styles.staggerDigital },
+    { label: "BG Digital", href: "/bg-digital", animation: styles.staggerDigital },
 ];
 
 const SCROLL_THRESHOLD = 3;
@@ -126,13 +126,7 @@ export function Header() {
                     aria-label="Navegação principal"
                 >
                     {navigationLinks.map((link) => {
-                        const isActive =
-                            pathname === link.href &&
-                            (
-                                link.href === "/about-us" ||
-                                link.href === "/careers" ||
-                                link.href === "/contact"
-                            );
+                        const isActive = pathname === link.href;
 
                         return (
                             <Link

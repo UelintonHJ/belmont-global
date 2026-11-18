@@ -31,14 +31,20 @@ export function Footer() {
                                 className={styles.primaryNavigation}
                                 aria-label="Navegação institucional"
                             >
-                                <FooterLink href="/about-us">Quem Somos</FooterLink>
+                                <FooterLink href="/about-us">
+                                    Quem Somos
+                                </FooterLink>
 
-                                <FooterLink href="/careers">Carreiras</FooterLink>
+                                <FooterLink href="/careers">
+                                    Carreiras
+                                </FooterLink>
 
-                                <FooterLink href="/contact">Contato</FooterLink>
+                                <FooterLink href="/contact">
+                                    Contato
+                                </FooterLink>
 
                                 <Link
-                                    href="#bg-digital"
+                                    href="/bg-digital"
                                     className={styles.digitalLink}
                                 >
                                     BG Digital
