@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import Image from "next/image";
 
 import styles from "../styles/ContactLocations.module.css";
@@ -200,41 +202,51 @@ export function ContactLocations() {
         >
             <div className={styles.content}>
                 <header className={styles.header}>
-                    <div className={styles.eyebrow}>
-                        <div
-                            className={styles.octagon}
-                            aria-hidden="true"
-                        >
-                            <svg
-                                className={styles.octagonSvg}
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 90 90"
-                                fill="none"
-                                focusable="false"
+                    <ScrollReveal
+                        as="div"
+                        variant="up"
+                    >
+                        <div className={styles.eyebrow}>
+                            <div
+                                className={styles.octagon}
+                                aria-hidden="true"
                             >
-                                <polygon
-                                    points="26,1 64,1 89,26 89,64 64,89 26,89 1,64 1,26"
-                                    stroke="currentColor"
-                                    strokeWidth="1"
-                                />
-                            </svg>
+                                <svg
+                                    className={styles.octagonSvg}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 90 90"
+                                    fill="none"
+                                    focusable="false"
+                                >
+                                    <polygon
+                                        points="26,1 64,1 89,26 89,64 64,89 26,89 1,64 1,26"
+                                        stroke="currentColor"
+                                        strokeWidth="1"
+                                    />
+                                </svg>
 
-                            <span className={styles.octagonNumber}>
-                                02
+                                <span className={styles.octagonNumber}>
+                                    02
+                                </span>
+                            </div>
+
+                            <span className={styles.eyebrowLabel}>
+                                NOSSAS LOCALIZAÇÕES
                             </span>
                         </div>
+                    </ScrollReveal>
 
-                        <span className={styles.eyebrowLabel}>
-                            NOSSAS LOCALIZAÇÕES
-                        </span>
-                    </div>
-
-                    <h2
-                        id="contact-locations-title"
-                        className={styles.title}
+                    <ScrollReveal
+                        as="div"
+                        variant="up"
                     >
-                        Nossos Escritórios
-                    </h2>
+                        <h2
+                            id="contact-locations-title"
+                            className={styles.title}
+                        >
+                            Nossos Escritórios
+                        </h2>
+                    </ScrollReveal>
                 </header>
 
                 <div className={styles.locationsList}>
@@ -249,19 +261,32 @@ export function ContactLocations() {
                                 aria-labelledby={`location-${office.id}-title`}
                             >
                                 <div className={styles.locationInfo}>
-                                    <p className={styles.country}>
-                                        {office.country}
-                                    </p>
-
-                                    <h3
-                                        id={`location-${office.id}-title`}
-                                        className={styles.city}
+                                    <ScrollReveal
+                                        as="p"
+                                        variant="up"
+                                        className={styles.country}
                                     >
-                                        {office.city}
-                                    </h3>
+                                        {office.country}
+                                    </ScrollReveal>
+
+                                    <ScrollReveal
+                                        as="div"
+                                        variant="up"
+                                    >
+                                        <h3
+                                            id={`location-${office.id}-title`}
+                                            className={styles.city}
+                                        >
+                                            {office.city}
+                                        </h3>
+                                    </ScrollReveal>
                                 </div>
 
-                                <div className={styles.imageFrame}>
+                                <ScrollReveal
+                                    as="div"
+                                    variant="wipe"
+                                    className={styles.imageFrame}
+                                >
                                     <Image
                                         src={office.image}
                                         alt={office.imageAlt}
@@ -270,29 +295,39 @@ export function ContactLocations() {
                                         className={styles.locationImage}
                                         unoptimized
                                     />
-                                </div>
+                                </ScrollReveal>
 
                                 <div className={styles.locationDetails}>
-                                    <address className={styles.address}>
-                                        {office.addressLines.map(
-                                            (line, index) => (
-                                                <span key={`${office.id}-address-${index}`}>
-                                                    {line}
-                                                </span>
-                                            )
-                                        )}
-                                    </address>
-
-                                    <a
-                                        className={styles.locationLink}
-                                        href={mapsUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={`Como chegar ao escritório de ${office.city}, ${office.country}`}
+                                    <ScrollReveal
+                                        as="div"
+                                        variant="up"
                                     >
-                                        <span>Como Chegar</span>
-                                        <ArrowRight />
-                                    </a>
+                                        <address className={styles.address}>
+                                            {office.addressLines.map(
+                                                (line, index) => (
+                                                    <span key={`${office.id}-address-${index}`}>
+                                                        {line}
+                                                    </span>
+                                                )
+                                            )}
+                                        </address>
+                                    </ScrollReveal>
+
+                                    <ScrollReveal
+                                        as="div"
+                                        variant="center"
+                                    >
+                                        <a
+                                            className={styles.locationLink}
+                                            href={mapsUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`Como chegar ao escritório de ${office.city}, ${office.country}`}
+                                        >
+                                            <span>Como Chegar</span>
+                                            <ArrowRight />
+                                        </a>
+                                    </ScrollReveal>
                                 </div>
                             </article>
                         );

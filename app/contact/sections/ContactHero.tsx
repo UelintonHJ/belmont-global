@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import GlobeCanvas from "@/app/about-us/sections/GlobeCanvas";
 
 import styles from "../styles/ContactHero.module.css";
@@ -10,34 +12,39 @@ export function ContactHero() {
         >
             <div className={styles.content}>
                 <div className={styles.copy}>
-                    <div className={styles.eyebrow}>
-                        <div
-                            className={styles.octagon}
-                            aria-hidden="true"
-                        >
-                            <svg
-                                className={styles.octagonSvg}
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 90 90"
-                                fill="none"
-                                focusable="false"
+                    <ScrollReveal
+                        as="div"
+                        variant="up"
+                    >
+                        <div className={styles.eyebrow}>
+                            <div
+                                className={styles.octagon}
+                                aria-hidden="true"
                             >
-                                <polygon
-                                    points="26,1 64,1 89,26 89,64 64,89 26,89 1,64 1,26"
-                                    stroke="currentColor"
-                                    strokeWidth="1"
-                                />
-                            </svg>
+                                <svg
+                                    className={styles.octagonSvg}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 90 90"
+                                    fill="none"
+                                    focusable="false"
+                                >
+                                    <polygon
+                                        points="26,1 64,1 89,26 89,64 64,89 26,89 1,64 1,26"
+                                        stroke="currentColor"
+                                        strokeWidth="1"
+                                    />
+                                </svg>
 
-                            <span className={styles.octagonNumber}>
-                                01
+                                <span className={styles.octagonNumber}>
+                                    01
+                                </span>
+                            </div>
+
+                            <span className={styles.eyebrowLabel}>
+                                SEJA NOSSO PARCEIRO
                             </span>
                         </div>
-
-                        <span className={styles.eyebrowLabel}>
-                            SEJA NOSSO PARCEIRO
-                        </span>
-                    </div>
+                    </ScrollReveal>
 
                     <h1
                         id="contact-hero-title"
@@ -48,7 +55,7 @@ export function ContactHero() {
                 </div>
 
                 <div className={styles.visual}>
-                    <GlobeCanvas 
+                    <GlobeCanvas
                         mode="contact"
                         className={styles.globe}
                     />
