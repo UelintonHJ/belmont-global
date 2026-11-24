@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { BgDigitalHero } from "./sections/BgDigitalHero";
 import { BgDigitalIntroduction } from "./sections/BgDigitalIntroduction";
 import { BgDigitalLeadership } from "./sections/BgDigitalLeadership";
+import { BgDigitalTalent } from "./sections/BgDigitalTalent";
 
 export const metadata: Metadata = {
     title: "BG Digital | Belmont Global",
@@ -16,6 +17,7 @@ export default function BgDigitalPage() {
             <BgDigitalHero />
             <BgDigitalIntroduction />
             <BgDigitalLeadership />
+            <BgDigitalTalent />
         </main>
     )
 }
