@@ -5,6 +5,7 @@ import { BgDigitalIntroduction } from "./sections/BgDigitalIntroduction";
 import { BgDigitalLeadership } from "./sections/BgDigitalLeadership";
 import { BgDigitalTalent } from "./sections/BgDigitalTalent";
 import { BgDigitalGlobalSupport } from "./sections/BgDigitalGlobalSupport";
+import { BgDigitalOpportunity } from "./sections/BgDigitalOpportunity";
 
 export const metadata: Metadata = {
     title: "BG Digital | Belmont Global",
@@ -20,6 +21,7 @@ export default function BgDigitalPage() {
             <BgDigitalLeadership />
             <BgDigitalTalent />
             <BgDigitalGlobalSupport />
+            <BgDigitalOpportunity />
         </main>
     )
 }
