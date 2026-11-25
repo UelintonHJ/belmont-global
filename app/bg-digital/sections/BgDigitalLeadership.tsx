@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/BgDigitalLeadership.module.css";
 
 export function BgDigitalLeadership() {
@@ -14,20 +16,34 @@ export function BgDigitalLeadership() {
                         id="bg-digital-leadership-title"
                         className={styles.name}
                     >
-                        <span>Eduardo</span>
+                        <ScrollReveal
+                            as="span"
+                            className={styles.nameLine}
+                            variant="up"
+                        >
+                            Eduardo
+                        </ScrollReveal>
 
-                        <span className={styles.nameAccent}>
+                        <ScrollReveal
+                            as="span"
+                            className={`${styles.nameAccent} ${styles.nameAccentReveal}`}
+                            variant="up"
+                        >
                             Prado
-                        </span>
+                        </ScrollReveal>
                     </h2>
 
-                    <p className={styles.role}>
+                    <ScrollReveal
+                        as="p"
+                        className={styles.role}
+                        variant="up"
+                    >
                         CEO
-                    </p>
+                    </ScrollReveal>
                 </div>
 
                 <div className={styles.quote}>
-                    <Image 
+                    <Image
                         src="/images/quote-turquoise.svg"
                         alt=""
                         aria-hidden="true"
@@ -36,15 +52,21 @@ export function BgDigitalLeadership() {
                         className={styles.quoteMark}
                     />
 
-                    <blockquote className={styles.quoteText}>
-                        Nossa convicção na enorme diversidade de 
-                        oportunidades no mercado de ativos digitais e 
-                        na sua relevância para investidores de longo
-                        prazo foi o motivo pelo qual criamos a BG Digital.
-                    </blockquote>
+                    <ScrollReveal
+                        as="div"
+                        className={styles.quoteTextReveal}
+                        variant="up"
+                    >
+                        <blockquote className={styles.quoteText}>
+                            Nossa convicção na enorme diversidade de
+                            oportunidades no mercado de ativos digitais e
+                            na sua relevância para investidores de longo
+                            prazo foi o motivo pelo qual criamos a BG Digital.
+                        </blockquote>
+                    </ScrollReveal>
 
                     <div className={styles.quoteClosing}>
-                        <Image 
+                        <Image
                             src="/images/quote-turquoise.svg"
                             alt=""
                             aria-hidden="true"
@@ -56,7 +78,7 @@ export function BgDigitalLeadership() {
                 </div>
 
                 <figure className={styles.portraitFrame}>
-                    <Image 
+                    <Image
                         src="/images/eduardo-prado-bg-digital-img.webp"
                         alt="Eduardo Prado, CEO da BG Digital"
                         fill
@@ -67,11 +89,12 @@ export function BgDigitalLeadership() {
                 </figure>
             </div>
 
-            <div
+            <ScrollReveal
+                as="div"
                 className={styles.designImage}
-                aria-hidden="true"
+                variant="wipe"
             >
-                <Image 
+                <Image
                     src="/images/design-section.webp"
                     alt=""
                     width={1366}
@@ -79,7 +102,7 @@ export function BgDigitalLeadership() {
                     sizes="(max-width: 600px) 100vw, 510px"
                     className={styles.designImageContent}
                 />
-            </div>
+            </ScrollReveal>
         </section>
     );
 }

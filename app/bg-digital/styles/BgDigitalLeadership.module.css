@@ -4,11 +4,9 @@
 
     width: 100%;
 
-    background: linear-gradient(
-        to right,
-        #62cac3 0%,
-        #141c25 70%
-    );
+    background: linear-gradient(to right,
+            #62cac3 0%,
+            #141c25 70%);
 
     color: var(--color-white);
 }
@@ -19,7 +17,7 @@
     grid-template-areas: "identity quote portrait";
 
     column-gap: clamp(1.5rem, 3vw, 3rem);
-    
+
     align-items: stretch;
 
     width: 100%;
@@ -52,6 +50,15 @@
     font-size: 48px;
     font-weight: 400;
     line-height: 1.1;
+}
+
+.nameLine,
+.nameAccentReveal {
+    display: block;
+}
+
+.nameAccentReveal {
+    --reveal-delay: 250ms
 }
 
 .nameAccent {
@@ -89,6 +96,10 @@
     height: 17.5px;
 
     object-fit: contain;
+}
+
+.quoteTextReveal {
+    width: 100%;
 }
 
 .quoteText {
@@ -139,6 +150,9 @@
     position: absolute;
     z-index: 2;
 
+    --scroll-reveal-wipe-background: transparent;
+    --scroll-reveal-wipe-overlay: transparent;
+
     top: clamp(-158.7px, -11.51vw, -80px);
     left: 0;
 
@@ -147,6 +161,13 @@
 
     overflow: hidden;
     pointer-events: none;
+}
+
+.designImage.wipe {
+    position: absolute;
+    
+    --scroll-reveal-wipe-background: transparent;
+    --scroll-reveal-wipe-overlay: transparent;
 }
 
 .designImageContent {
@@ -177,7 +198,7 @@
 @media (max-width: 900px) {
     .content {
         grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: 
+        grid-template-areas:
             "quote"
             "visual";
 

@@ -26,8 +26,11 @@ export function ScrollReveal({
         if (!element) return;
 
         if (typeof IntersectionObserver === "undefined") {
-            setIsVisible(true);
-            return;
+            const frameId = requestAnimationFrame(() => {
+                setIsVisible(true);
+            });
+
+            return () => cancelAnimationFrame(frameId);
         }
 
         let hasStartedReveal = false;
