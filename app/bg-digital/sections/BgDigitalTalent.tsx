@@ -71,7 +71,7 @@ export function BgDigitalTalent() {
 
                         <div className={styles.metricCard}>
                             <dt className={styles.metricNumber}>
-                                8
+                                9
                             </dt>
 
                             <dd className={styles.metricLabel}>

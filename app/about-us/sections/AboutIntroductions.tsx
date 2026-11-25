@@ -63,10 +63,10 @@ export default function AboutIntroduction() {
                         </ScrollReveal>
 
                         <ScrollReveal as="p" variant="up">
-                            Contamos com mais de 1.050 colaboradores, mais
-                            de 145 Gestores de Carteira* e 9 Hubs com
+                            Contamos com mais de 1.100 colaboradores, mais
+                            de 150 Gestores de Carteira* e 9 Hubs com
                             escritórios em São Paulo, Nova York, Londres,
-                            Genebra, Jersey, Hong Kong, Abu Dhabi, Cingapura
+                            Genebra, Jersey, Hong Kong, Abu Dhabi, Singapura
                             e Austin.
                         </ScrollReveal>
 
