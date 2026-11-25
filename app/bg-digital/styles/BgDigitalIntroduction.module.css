@@ -17,6 +17,10 @@
     margin-inline: auto;
 }
 
+.eyebrowReveal {
+    width: fit-content;
+}
+
 .eyebrow {
     display: flex;
     align-items: center;
@@ -38,44 +42,54 @@
     flex: 0 0 88px;
     width: 88px;
 
-    padding: 16px 0 16px;
+    padding: 16px 0;
 
     color: var(--color-dg-v2-turquoise_on_dark);
     text-align: right;
 }
 
-.eyebrowNumber::before {
+.eyebrowNumber::before,
+.eyebrowNumber::after {
     position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--color-dg-v2-turquoise_on_dark)
+    );
+
+    content: "";
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: 
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.eyebrowNumber::before {
     top: 0;
     right: 0;
 
     width: 75%;
-    height: 1px;
 
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--color-dg-v2-turquoise_on_dark)
-    );
-
-    content: "";
+    transition-delay: 100ms;
 }
 
 .eyebrowNumber::after {
-    position: absolute;
     bottom: 0;
     left: 0;
 
     width: 100%;
-    height: 1px;
 
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--color-dg-v2-turquoise_on_dark)
-    );
+    transition-delay: 200ms;
+}
 
-    content: "";
+.eyebrowReveal[data-visible="true"] .eyebrowNumber::before,
+.eyebrowReveal[data-visible="true"] .eyebrowNumber::after {
+    transform: scaleX(1);
 }
 
 .eyebrowLabel {
@@ -99,6 +113,10 @@
 
 .titleAccent {
     color: var(--color-dg-v2-turquoise_on_dark);
+}
+
+.titleMainReveal {
+    --reveal-delay: 350ms;
 }
 
 .titleMain {
@@ -128,6 +146,10 @@
     line-height: 1.7;
 
     text-wrap: pretty;
+}
+
+.subtitleReveal {
+    width: fit-content;
 }
 
 .subtitle {
@@ -180,5 +202,13 @@
     .multistrategyDescription {
         font-size: 16px;
         line-height: 1.65;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .eyebrowNumber::before,
+    .eyebrowNumber::after {
+        transform: none;
+        transition: none;
     }
 }

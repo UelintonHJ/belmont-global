@@ -26,7 +26,7 @@ export function ScrollReveal({
         if (!element) return;
 
         if (typeof IntersectionObserver === "undefined") {
-            element.classList.add(styles.isVisible);
+            setIsVisible(true);
             return;
         }
 
@@ -98,6 +98,7 @@ export function ScrollReveal({
     return (
         <Tag
             ref={elementRef}
+            data-visible={isVisible}
             className={[
                 styles.reveal,
                 styles[variant],
