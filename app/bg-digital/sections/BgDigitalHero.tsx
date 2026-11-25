@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/BgDigitalHero.module.css";
 
 export function BgDigitalHero() {
@@ -11,13 +13,21 @@ export function BgDigitalHero() {
                     id="bg-digital-hero-title"
                     className={styles.title}
                 >
-                    <span className={styles.titleAccent}>
+                    <ScrollReveal 
+                        as="span"
+                        variant="up"
+                        className={`${styles.titleAccent} ${styles.titleAccentReveal}`}
+                    >
                         Criptoativos &amp;
-                    </span>
+                    </ScrollReveal>
 
-                    <span className={styles.titleMain}>
+                    <ScrollReveal 
+                        as="span"
+                        variant="up"
+                        className={`${styles.titleMain} ${styles.titleMainReveal}`}
+                    >
                         Ativos Digitais
-                    </span>
+                    </ScrollReveal>
                 </h1>
             </div>
         </section>

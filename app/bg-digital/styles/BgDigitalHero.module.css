@@ -55,6 +55,14 @@
     color: var(--color-white);
 }
 
+.titleAccentReveal {
+    --reveal-delay: 0ms;
+}
+
+.titleMainReveal {
+    --reveal-delay: 250ms
+}
+
 @media (max-width: 768px) {
     .hero {
         padding: 
