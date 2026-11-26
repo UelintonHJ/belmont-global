@@ -10,7 +10,6 @@
 
     color: var(--color-white);
 }
-
 .content {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(0, 5fr) minmax(0, 3fr);
@@ -23,7 +22,6 @@
     width: 100%;
     min-height: 408px;
 }
-
 .identity {
     grid-area: identity;
 
@@ -38,7 +36,6 @@
 
     padding: 2rem 0 2rem clamp(1.25rem, 4vw, 4rem);
 }
-
 .name {
     display: flex;
     flex-direction: column;
@@ -51,20 +48,16 @@
     font-weight: 400;
     line-height: 1.1;
 }
-
 .nameLine,
 .nameAccentReveal {
     display: block;
 }
-
 .nameAccentReveal {
     --reveal-delay: 250ms
 }
-
 .nameAccent {
     color: #141c25;
 }
-
 .role {
     margin: 0.75rem 0 0;
 
@@ -74,7 +67,6 @@
     font-weight: 400;
     line-height: 1.4;
 }
-
 .quote {
     grid-area: quote;
 
@@ -87,7 +79,6 @@
 
     padding: 2.5rem 0;
 }
-
 .quoteMark {
     display: block;
     flex: 0 0 20px;
@@ -97,11 +88,9 @@
 
     object-fit: contain;
 }
-
 .quoteTextReveal {
     width: 100%;
 }
-
 .quoteText {
     margin: 1.25rem 0 0;
 
@@ -113,7 +102,6 @@
 
     text-wrap: pretty;
 }
-
 .quoteClosing {
     display: flex;
     justify-content: flex-end;
@@ -121,11 +109,9 @@
     width: 100%;
     margin-top: 1.25rem;
 }
-
 .quoteMarkClosing {
     transform: scaleX(-1);
 }
-
 .portraitFrame {
     grid-area: portrait;
 
@@ -138,7 +124,6 @@
     margin: 0;
     overflow: hidden;
 }
-
 .portrait {
     display: block;
 
@@ -146,7 +131,8 @@
     object-position: center;
 }
 
-.designImage {
+/* Decorative image: keep it outside the section's normal flow */
+.section .designImage {
     position: absolute;
     z-index: 2;
 
@@ -162,14 +148,6 @@
     overflow: hidden;
     pointer-events: none;
 }
-
-.designImage.wipe {
-    position: absolute;
-    
-    --scroll-reveal-wipe-background: transparent;
-    --scroll-reveal-wipe-overlay: transparent;
-}
-
 .designImageContent {
     display: block;
 
@@ -179,22 +157,18 @@
     object-fit: cover;
     object-position: center;
 }
-
 @media (max-width: 1100px) {
     .name {
         font-size: 40px;
     }
-
     .role {
         font-size: 22px;
     }
-
     .quoteText {
         font-size: 24px;
         line-height: 1.4;
     }
 }
-
 @media (max-width: 900px) {
     .content {
         grid-template-columns: minmax(0, 1fr);
@@ -207,18 +181,15 @@
 
         min-height: 0;
     }
-
     .quote {
         grid-area: quote;
 
         padding: 2rem clamp(1.5rem, 5vw, 3rem) 2.5rem;
     }
-
     .quoteText {
         font-size: clamp(22px, 3.5vw, 28px);
         line-height: 1.45;
     }
-
     .identity {
         grid-area: visual;
 
@@ -229,15 +200,12 @@
 
         padding: 2rem 0 2rem clamp(1.5rem, 5vw, 3rem);
     }
-
     .name {
         font-size: clamp(32px, 5vw, 40px);
     }
-
     .role {
         font-size: 22px;
     }
-
     .portraitFrame {
         grid-area: visual;
 
@@ -250,34 +218,27 @@
         height: auto;
         aspect-ratio: 1200 / 896;
     }
-
     .designImage {
         display: none;
     }
 }
-
 @media (max-width: 480px) {
     .quote {
         padding-inline: 1.25rem;
     }
-
     .identity {
         width: 58%;
         padding-left: 1.25rem;
     }
-
     .name {
         font-size: 32px;
     }
-
     .role {
         font-size: 20px;
     }
-
     .quoteText {
         font-size: 21px;
     }
-
     .portraitFrame {
         width: 58%;
     }
