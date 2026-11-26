@@ -18,6 +18,10 @@
     margin-inline: auto;
 }
 
+.eyebrowReveal {
+    width: fit-content;
+}
+
 .eyebrow {
     display: flex;
     align-items: center;
@@ -82,6 +86,37 @@
 
 .eyebrowLabel {
     color: var(--color-white);
+}
+
+.eyebrowNumber::before,
+.eyebrowNumber::after {
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: 
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.eyebrowNumber::before {
+    transition-delay: 100ms;
+}
+
+.eyebrowNumber::after {
+    transition-delay: 200ms;
+}
+
+.eyebrowReveal[data-visible="true"]
+.eyebrowNumber::before,
+.eyebrowReveal[data-visible="true"]
+.eyebrowNumber::after {
+    transform: scaleX(1);
+}
+.titleMainReveal {
+    --reveal-delay: 180ms;
+}
+
+.metricsPanelReveal {
+    min-width: 0;
 }
 
 .content {
@@ -540,6 +575,16 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .eyebrowNumber::before,
+    .eyebrowNumber::after {
+        animation: none;
+        clip-path: none;
+    }
+
+    .titleMainReveal {
+        --reveal-delay: 0ms;
+    }
+
     .metricCard {
         transition: none;
     }

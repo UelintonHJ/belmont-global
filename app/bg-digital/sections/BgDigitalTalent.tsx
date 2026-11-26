@@ -1,3 +1,6 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+import { CountUp } from "@/app/components/CountUp";
+
 import styles from "../styles/BgDigitalTalent.module.css";
 
 export function BgDigitalTalent() {
@@ -7,15 +10,21 @@ export function BgDigitalTalent() {
             aria-labelledby="bg-digital-talent-title"
         >
             <div className={styles.container}>
-                <div className={styles.eyebrow}>
-                    <span className={styles.eyebrowNumber}>
-                        02
-                    </span>
+                <ScrollReveal
+                    as="div"
+                    variant="fade"
+                    className={styles.eyebrowReveal}
+                >
+                    <div className={styles.eyebrow}>
+                        <span className={styles.eyebrowNumber}>
+                            02
+                        </span>
 
-                    <span className={styles.eyebrowLabel}>
-                        TALENTOS
-                    </span>
-                </div>
+                        <span className={styles.eyebrowLabel}>
+                            TALENTOS
+                        </span>
+                    </div>
+                </ScrollReveal>
 
                 <div className={styles.content}>
                     <div className={styles.description}>
@@ -23,77 +32,101 @@ export function BgDigitalTalent() {
                             id="bg-digital-talent-title"
                             className={styles.title}
                         >
-                            <span className={styles.titleAccent}>
+                            <ScrollReveal
+                                as="span"
+                                variant="up"
+                                className={styles.titleAccent}
+                            >
                                 Nossa
-                            </span>
+                            </ScrollReveal>
 
-                            <span className={styles.titleMain}>
+                            <ScrollReveal
+                                as="span"
+                                variant="up"
+                                className={`${styles.titleMain} ${styles.titleMainReveal}`}
+                            >
                                 Equipe
-                            </span>
+                            </ScrollReveal>
                         </h2>
 
                         <div className={styles.textContent}>
-                            <p>
-                                Ao alavancar nosso quadro excepcional de 
+                            <ScrollReveal
+                                as="p"
+                                variant="up"
+                            >
+                                Ao alavancar nosso quadro excepcional de
                                 talentos, tecnologia inovadora e uma
                                 infraestrutura institucional consolidada,
                                 buscamos entregar os melhores resultados
                                 possíveis para nossos clientes,
-                                mantendo-nos na vanguarda de um setor em 
+                                mantendo-nos na vanguarda de um setor em
                                 constante evolução.
-                            </p>
+                            </ScrollReveal>
 
-                            <p>
-                                Além de contar com o suporte de mais de 
+                            <ScrollReveal
+                                as="p"
+                                variant="up"
+                            >
+                                Além de contar com o suporte de mais de
                                 1.100 profissionais do Grupo Belmont
                                 Global, a BG Digital construiu uma equipe
-                                global sólida, que combina de forma única 
-                                talentos nativos do universo cripto e 
-                                especialistas do mercado financeiro 
+                                global sólida, que combina de forma única
+                                talentos nativos do universo cripto e
+                                especialistas do mercado financeiro
                                 tradicional.
-                            </p>
+                            </ScrollReveal>
                         </div>
                     </div>
 
-                    <dl
-                        className={styles.metricsPanel}
-                        aria-label="Indicadores da equipe BG Digital"
+                    <ScrollReveal
+                        as="div"
+                        variant="up"
+                        className={styles.metricsPanelReveal}
                     >
-                        <div className={styles.metricLead}>
-                            <dt className={styles.metricLeadNumber}>
-                                +45
-                            </dt>
+                        <dl
+                            className={styles.metricsPanel}
+                            aria-label="Indicadores da equipe BG Digital"
+                        >
+                            <div className={styles.metricLead}>
+                                <dt className={styles.metricLeadNumber}>
+                                    +<CountUp value={45} />
+                                </dt>
 
-                            <dd className={styles.metricLeadLabel}>
-                                Profissionais
-                            </dd>
-                        </div>
+                                <dd className={styles.metricLeadLabel}>
+                                    Profissionais
+                                </dd>
+                            </div>
 
-                        <div className={styles.metricCard}>
-                            <dt className={styles.metricNumber}>
-                                9
-                            </dt>
+                            <div className={styles.metricCard}>
+                                <dt className={styles.metricNumber}>
+                                    <CountUp value={9} />
+                                </dt>
 
-                            <dd className={styles.metricLabel}>
-                                Gestores de Carteira
-                            </dd>
-                        </div>
+                                <dd className={styles.metricLabel}>
+                                    Gestoras de Carteira
+                                </dd>
+                            </div>
 
-                        <div className={styles.metricCard}>
-                            <dt className={styles.metricNumber}>
-                                16
-                            </dt>
+                            <div className={styles.metricCard}>
+                                <dt className={styles.metricNumber}>
+                                    <CountUp value={16} />
+                                </dt>
 
-                            <dd className={styles.metricLabel}>
-                                Especialistas em Investimentos
-                            </dd>
-                        </div>
-                    </dl>
+                                <dd className={styles.metricLabel}>
+                                    Especialistas em Investimentos
+                                </dd>
+                            </div>
+                        </dl>
+                    </ScrollReveal>
                 </div>
 
-                <p className={styles.footnote}>
+                <ScrollReveal 
+                    as="p"
+                    variant="up"
+                    className={styles.footnote}
+                >
                     Dados referentes a 1º de novembro de 2026.
-                </p>
+                </ScrollReveal>
             </div>
         </section>
     );
