@@ -8,6 +8,8 @@ import {
     geoPath,
 } from "d3-geo";
 
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import landData from "../../about-us/data/ne_110m_land.json";
 
 import styles from "../styles/BgDigitalGlobalSupport.module.css";
@@ -328,16 +330,27 @@ export function BgDigitalGlobalSupport() {
                         id="bg-digital-global-support-title"
                         className={styles.title}
                     >
-                        <span className={styles.titleAccent}>
+                        <ScrollReveal
+                            as="span"
+                            variant="up"
+                            className={styles.titleAccent}
+                        >
                             Suporte Global 24/7
-                        </span>
+                        </ScrollReveal>
 
-                        <span className={styles.titleMain}>
+                        <ScrollReveal 
+                            as="span"
+                            variant="up"
+                            className={`${styles.titleMain} ${styles.titleMainReveal}`}>
                             Um Modelo à Altura de um Mercado Ininterrupto
-                        </span>
+                        </ScrollReveal>
                     </h2>
 
-                    <p className={styles.text}>
+                    <ScrollReveal 
+                        as="p"
+                        variant="up"
+                        className={styles.text}
+                    >
                         A BG Digital utiliza a presença global da 
                         Belmont Global em 9 escritórios para garantir
                         acesso contínuo a suporte de negociação,
@@ -345,7 +358,7 @@ export function BgDigitalGlobalSupport() {
                         horário, 24 horas por dia, 7 dias por semana,
                         365 dias por ano, em sintonia com o ritmo do
                         mercado de ativos digitais.
-                    </p>
+                    </ScrollReveal>
                 </div>
 
                 <ul

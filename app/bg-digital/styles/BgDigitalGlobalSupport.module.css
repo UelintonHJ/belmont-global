@@ -91,6 +91,10 @@
     color: var(--color-white);
 }
 
+.titleMainReveal {
+    --reveal-delay: 250ms;
+}
+
 .text {
     max-width: 850px;
 

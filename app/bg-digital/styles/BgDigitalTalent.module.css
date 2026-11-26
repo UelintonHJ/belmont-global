@@ -111,6 +111,7 @@
 .eyebrowNumber::after {
     transform: scaleX(1);
 }
+
 .titleMainReveal {
     --reveal-delay: 180ms;
 }
