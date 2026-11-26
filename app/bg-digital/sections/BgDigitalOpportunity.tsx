@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/BgDigitalOpportunity.module.css";
 
 const opportunityAreas = [
@@ -15,15 +17,21 @@ export function BgDigitalOpportunity() {
             aria-labelledby="bg-digital-opportunity-title"
         >
             <div className={styles.container}>
-                <div className={styles.eyebrow}>
-                    <span className={styles.eyebrowNumber}>
-                        03
-                    </span>
+                <ScrollReveal
+                    as="div"
+                    variant="fade"
+                    className={styles.eyebrowReveal}
+                >
+                    <div className={styles.eyebrow}>
+                        <span className={styles.eyebrowNumber}>
+                            03
+                        </span>
 
-                    <span className={styles.eyebrowLabel}>
-                        OPPORTUNITY
-                    </span>
-                </div>
+                        <span className={styles.eyebrowLabel}>
+                            OPPORTUNITY
+                        </span>
+                    </div>
+                </ScrollReveal>
 
                 <div className={styles.content}>
                     <div className={styles.description}>
@@ -31,54 +39,78 @@ export function BgDigitalOpportunity() {
                             id="bg-digital-opportunity-title"
                             className={styles.title}
                         >
-                            <span className={styles.titleAccent}>
+                            <ScrollReveal
+                                as="span"
+                                variant="up"
+                                className={styles.titleAccent}
+                            >
                                 Nossos
-                            </span>
+                            </ScrollReveal>
 
-                            <span className={styles.titleAccent}>
+                            <ScrollReveal
+                                as="span"
+                                variant="up"
+                                className={styles.titleAccent}>
                                 parceiros &
-                            </span>
+                            </ScrollReveal>
 
-                            <span className={styles.titleMain}>
+                            <ScrollReveal
+                                as="span"
+                                variant="up"
+                                className={`${styles.titleMain} ${styles.titleMainReveal}`}>
                                 Investimentos
-                            </span>
+                            </ScrollReveal>
                         </h2>
 
-                        <p className={styles.descriptionText}>
-                            A estrutura evergreen da BG Digital, aliada 
-                            ao nosso compromisso de oferecer uma ampla 
-                            gama de serviços de valor agregado aos 
-                            fundadores, nos permite atuar como parceiros 
-                            estratégicos de longo prazo para as empresas 
-                            do nosso portfólio. Para projetos do 
-                            ecossistema cripto que buscam ganho de escala, 
-                            oferecemos suporte especializado nas 
+                        <ScrollReveal
+                            as="p"
+                            variant="up"
+                            className={styles.descriptionText}
+                        >
+                            A estrutura evergreen da BG Digital, aliada
+                            ao nosso compromisso de oferecer uma ampla
+                            gama de serviços de valor agregado aos
+                            fundadores, nos permite atuar como parceiros
+                            estratégicos de longo prazo para as empresas
+                            do nosso portfólio. Para projetos do
+                            ecossistema cripto que buscam ganho de escala,
+                            oferecemos suporte especializado nas
                             seguintes áreas-chave:
-                        </p>
+                        </ScrollReveal>
                     </div>
 
                     <div className={styles.details}>
-                        <ul
-                            className={styles.opportunityList}
-                            aria-label="Áreas de suporte aos projetos"
+                        <ScrollReveal
+                            as="div"
+                            variant="up"
+                            className={styles.opportunityListReveal}
                         >
-                            {opportunityAreas.map((area) => (
-                                <li 
-                                    key={area}
-                                    className={styles.opportunityItem}
-                                >
-                                    {area}
-                                </li>
-                            ))}
-                        </ul>
+                            <ul
+                                className={styles.opportunityList}
+                                aria-label="Áreas de suporte aos projetos"
+                            >
+                                {opportunityAreas.map((area) => (
+                                    <li
+                                        key={area}
+                                        className={styles.opportunityItem}
+                                    >
+                                        {area}
+                                    </li>
+                                ))}
+                            </ul>
+                        </ScrollReveal>
 
                         <div className={styles.institucional}>
                             <h3 className={styles.institucionalTitle}>
                                 INFORMAÇÕES INSTITUCIONAIS E REGULATÓRIAS
                             </h3>
 
-                            <p className={styles.riskInformation}>
-                                <a 
+                            <ScrollReveal 
+                                as="p"
+                                variant="up"
+                                className={styles.riskInformation}
+                            >
+                                <a
                                     href="#"
                                     className={styles.riskLink}
                                     aria-label="Clique aqui para acessar os Fatores de Risco de Ativos Digitais"
@@ -87,9 +119,9 @@ export function BgDigitalOpportunity() {
                                         Clique aqui
                                     </strong>
                                 </a>
-                                {" "}para acessar os Fatores de Risco de 
+                                {" "}para acessar os Fatores de Risco de
                                 Ativos Digitais
-                            </p>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </div>
