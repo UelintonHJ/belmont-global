@@ -29,6 +29,10 @@
     margin-inline: auto;
 }
 
+.eyebrowReveal {
+    width: fit-content;
+}
+
 .eyebrow {
     display: flex;
     align-items: center;
@@ -57,38 +61,50 @@
     text-align: right;
 }
 
-.eyebrowNumber::before {
+.eyebrowNumber::before,
+.eyebrowNumber::after {
     position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--color-dg-v2-turquoise_on_dark)
+    );
+
+    content: "";
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: 
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.eyebrowNumber::before {
     top: 0;
     right: 0;
 
     width: 75%;
-    height: 1px;
 
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--color-dg-v2-turquoise_on_dark)
-    );
-
-    content: "";
+    transition-delay: 100ms;
 }
 
 .eyebrowNumber::after {
-    position: absolute;
     bottom: 0;
     left: 0;
 
     width: 100%;
-    height: 1px;
 
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--color-dg-v2-turquoise_on_dark)
-    );
+   transition-delay: 200ms;
+}
 
-    content: "";
+.eyebrowReveal[data-visible="true"]
+.eyebrowNumber::before,
+.eyebrowReveal[data-visible="true"]
+.eyebrowNumber::after {
+    transform: scaleX(1);
 }
 
 .eyebrowLabel {
@@ -120,6 +136,14 @@
 
 .titleMain {
     color: var(--color-white);
+}
+
+.titleMainReveal {
+    --reveal-delay: 350ms;
+}
+
+.subtitleReveal {
+    width: fit-content;
 }
 
 .subtitle {
@@ -160,6 +184,18 @@
     border-bottom: 3px solid var(--color-dg-v2-turquoise_on_dark);
 }
 
+.countryReveal,
+.cityReveal,
+.addressReveal,
+.officeReveal {
+    min-width: 0;
+}
+
+.officeLinkReveal {
+    justify-self: end;
+    width: fit-content;
+}
+
 .country,
 .city,
 .address,
@@ -190,8 +226,7 @@
 }
 
 .officeLink {
-    justify-self: end;
-
+    display: block;
     width: fit-content;
 
     color: var(--color-dg-v2-turquoise_on_light);
@@ -232,19 +267,19 @@
         padding: 1.5rem 0;
     }
 
-    .country {
+    .countryReveal {
         grid-area: country;
     }
 
-    .city {
+    .cityReveal {
         grid-area: city;
     }
 
-    .address {
+    .addressReveal {
         grid-area: address;
     }
 
-    .officeLink {
+    .officeLinkReveal {
         grid-area: link;
         justify-self: start;
     }
@@ -323,7 +358,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .eyebrowNumber::before,
+    .eyebrowNumber::after {
+        transform: none;
+        transition: none;
+    }
+
     .officeLink {
         transition: none;
+    }
+
+    .titleMainReveal {
+        --reveal-delay: 0ms;
     }
 }

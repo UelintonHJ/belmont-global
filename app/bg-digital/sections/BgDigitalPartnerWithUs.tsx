@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/BgDigitalPartnerWithUs.module.css";
 
 type OfficeLocation = {
@@ -99,37 +101,61 @@ export function BgDigitalPartnerWithUs() {
             aria-labelledby="bg-digital-partner-title"
         >
             <div className={styles.container}>
-                <div className={styles.eyebrow}>
-                    <span className={styles.eyebrowNumber}>
-                        04
-                    </span>
+                <ScrollReveal
+                    as="div"
+                    variant="fade"
+                    className={styles.eyebrowReveal}
+                >
+                    <div className={styles.eyebrow}>
+                        <span className={styles.eyebrowNumber}>
+                            04
+                        </span>
 
-                    <span className={styles.eyebrowLabel}>
-                        SEJA NOSSO PARCEIRO
-                    </span>
-                </div>
+                        <span className={styles.eyebrowLabel}>
+                            SEJA NOSSO PARCEIRO
+                        </span>
+                    </div>
+                </ScrollReveal>
 
                 <header className={styles.header}>
                     <h2
                         id="bg-digital-partner-title"
                         className={styles.title}
                     >
-                        <span className={styles.titleAccent}>
+                        <ScrollReveal
+                            as="span"
+                            variant="up"
+                            className={styles.titleAccent}
+                        >
                             Vamos
-                        </span>
+                        </ScrollReveal>
 
-                        <span className={styles.titleAccent}>
+                        <ScrollReveal
+                            as="span"
+                            variant="up"
+                            className={styles.titleAccent}
+                        >
                             Trabalhar
-                        </span>
+                        </ScrollReveal>
 
-                        <span className={styles.titleMain}>
+                        <ScrollReveal
+                            as="span"
+                            variant="up"
+                            className={`${styles.titleMain} ${styles.titleMainReveal}`}
+                        >
                             Juntos
-                        </span>
+                        </ScrollReveal>
                     </h2>
 
-                    <h3 className={styles.subtitle}>
-                        Nossos Escritórios
-                    </h3>
+                    <ScrollReveal
+                        as="div"
+                        variant="up"
+                        className={styles.subtitleReveal}
+                    >
+                        <h3 className={styles.subtitle}>
+                            Nossos Escritórios
+                        </h3>
+                    </ScrollReveal>
                 </header>
 
                 <ul
@@ -145,27 +171,51 @@ export function BgDigitalPartnerWithUs() {
                                 key={office.id}
                                 className={styles.officeItem}
                             >
-                                <strong className={styles.country}>
-                                    {office.country}
-                                </strong>
-
-                                <span className={styles.city}>
-                                    {office.city}
-                                </span>
-
-                                <address className={styles.address}>
-                                    {office.address}
-                                </address>
-
-                                <a
-                                    className={styles.officeLink}
-                                    href={mapsUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={`Como chegar ao escritório de ${office.city}, ${office.country}`}
+                                <ScrollReveal
+                                    as="div"
+                                    variant="up"
+                                    className={styles.countryReveal}
                                 >
-                                    Como Chegar
-                                </a>
+                                    <strong className={styles.country}>
+                                        {office.country}
+                                    </strong>
+                                </ScrollReveal>
+
+                                <ScrollReveal
+                                    as="div"
+                                    variant="up"
+                                    className={styles.cityReveal}
+                                >
+                                    <span className={styles.city}>
+                                        {office.city}
+                                    </span>
+                                </ScrollReveal>
+
+                                <ScrollReveal
+                                    as="div"
+                                    variant="up"
+                                    className={styles.addressReveal}
+                                >
+                                    <address className={styles.address}>
+                                        {office.address}
+                                    </address>
+                                </ScrollReveal>
+
+                                <ScrollReveal
+                                    as="div"
+                                    variant="up"
+                                    className={styles.officeLinkReveal}
+                                >
+                                    <a
+                                        className={styles.officeLink}
+                                        href={mapsUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Como chegar ao escritório de ${office.city}, ${office.country}`}
+                                    >
+                                        Como Chegar
+                                    </a>
+                                </ScrollReveal>
                             </li>
                         );
                     })}
