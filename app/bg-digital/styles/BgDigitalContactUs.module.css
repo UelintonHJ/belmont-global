@@ -45,6 +45,10 @@
     color: var(--color-white);
 }
 
+.titleMainReveal {
+    --reveal-delay: 180ms;
+}
+
 .contactGrid {
     display: flex;
     flex-direction: column;
@@ -69,6 +73,22 @@
 .contactItem:last-child {
     border-bottom: none;
     padding-bottom: 0;
+}
+
+.contactItemDelay1 {
+    --reveal-delay: 350ms;
+}
+
+.contactItemDelay2 {
+    --reveal-delay: 530ms;
+}
+
+.contactItemDelay3 {
+    --reveal-delay: 710ms;
+}
+
+.contactItemDelay4 {
+    --reveal-delay: 890ms;
 }
 
 .contactContent {
@@ -205,5 +225,13 @@
 @media (prefers-reduced-motion: reduce) {
     .contactLink {
         transition: none;
+    }
+
+    .titleMainReveal,
+    .contactItemDelay1,
+    .contactItemDelay2,
+    .contactItemDelay3,
+    .contactItemDelay4 {
+        --reveal-delay: 0ms;
     }
 }

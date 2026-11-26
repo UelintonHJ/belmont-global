@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/app/components/ScrollReveal";
+
 import styles from "../styles/BgDigitalContactUs.module.css";
 
 export function BgDigitalContactUs() {
@@ -12,18 +14,29 @@ export function BgDigitalContactUs() {
                         id="bg-digital-contact-title"
                         className={styles.title}
                     >
-                        <span className={styles.titleAccent}>
+                        <ScrollReveal
+                            as="span"
+                            variant="up"
+                            className={styles.titleAccent}
+                        >
                             Fale
-                        </span>
+                        </ScrollReveal>
 
-                        <span className={styles.titleMain}>
+                        <ScrollReveal
+                            as="span"
+                            variant="up"
+                            className={`${styles.titleMain} ${styles.titleMainReveal}`}>
                             Conosco
-                        </span>
+                        </ScrollReveal>
                     </h2>
                 </header>
 
                 <div className={styles.contactGrid}>
-                    <div className={styles.contactItem}>
+                    <ScrollReveal
+                        as="div"
+                        variant="up"
+                        className={`${styles.contactItem} ${styles.contactItemDelay1}`}
+                    >
                         <strong className={styles.contactLabel}>
                             Relações com Investidores / Dúvidas sobre Fundos:
                         </strong>
@@ -50,9 +63,13 @@ export function BgDigitalContactUs() {
                                 US: +1 (212) 555-0184
                             </a>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
-                    <div className={styles.contactItem}>
+                    <ScrollReveal
+                        as="div"
+                        variant="up"
+                        className={`${styles.contactItem} ${styles.contactItemDelay2}`}
+                    >
                         <strong className={styles.contactLabel}>
                             Assessoria de Imprensa:
                         </strong>
@@ -91,9 +108,13 @@ export function BgDigitalContactUs() {
                                 belmontglobal@vanguardalliance.com
                             </a>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
-                    <div className={styles.contactItem}>
+                    <ScrollReveal 
+                        as="div"
+                        variant="up"
+                        className={`${styles.contactItem} ${styles.contactItemDelay3}`}
+                    >
                         <strong className={styles.contactLabel}>
                             Demais Assuntos:
                         </strong>
@@ -106,9 +127,13 @@ export function BgDigitalContactUs() {
                                 +55 11 3897-4000
                             </a>
                         </div>
-                    </div>
+                    </ScrollReveal>
 
-                    <div className={styles.contactItem}>
+                    <ScrollReveal 
+                        as="div"
+                        variant="up"
+                        className={`${styles.contactItem} ${styles.contactItemDelay4}`}
+                    >
                         <strong className={styles.contactLabel}>
                             Social:
                         </strong>
@@ -127,7 +152,7 @@ export function BgDigitalContactUs() {
                                 https://www.linkedin.com/company/belmont-global/
                             </a>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </div>
         </section>
