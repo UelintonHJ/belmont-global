@@ -82,6 +82,8 @@ export function Header() {
         };
     }, []);
 
+    const isLoginActive = pathname === "/login";
+
     return (
         <header
             ref={headerRef}
@@ -153,8 +155,15 @@ export function Header() {
                     })}
 
                     <Link
-                        href="/"
-                        className={`${styles.loginLink} ${styles.staggerLogin}`}
+                        href="/login"
+                        className={[
+                            styles.loginLink, 
+                            styles.staggerLogin,
+                            isLoginActive ? styles.activeLoginLink : "",
+                        ]
+                            .filter(Boolean)
+                            .join(" ")}
+                        aria-current={isLoginActive ? "page" : undefined}
                         onClick={() => setIsMenuOpen(false)}
                     >
                         <span>Login</span>
